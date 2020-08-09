@@ -3,7 +3,8 @@ import React from 'react'
 export const Resume = ({ className }) => {
   return (
     <div id="resume" className={className}>
-      Here is my Resume!
+      <div className="alternate-color">Here is</div>
+      <div className="primary-color">my Resume</div>
     </div>
   )
 }

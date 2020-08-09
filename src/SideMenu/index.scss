@@ -53,6 +53,7 @@
 }
 
 .menu.active {
+  z-index: 10;
   padding-left: 0;
   opacity: 1;
   visibility: visible;

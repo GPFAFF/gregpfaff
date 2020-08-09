@@ -5,7 +5,7 @@ import './index.scss';
 export const JumboTron = () => {
   return (
     <section role="main">
-      <div className="left">
+      <div className="primary-color">
         <h2 aria-label="Hello!">
           <div className="title">
             <span>He</span>
@@ -15,7 +15,7 @@ export const JumboTron = () => {
           </div>
         </h2>
       </div>
-      <div className="right"/>
+      <div className="alternate-color"/>
     </section>
   )
 }

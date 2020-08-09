@@ -17,6 +17,7 @@ body {
   grid-column: 2;
   justify-self: center;
   margin-top: 20px;
+  color: black;
 
   > svg {
     font-size: 28px;
@@ -36,4 +37,16 @@ body {
 .block {
   height: 50vh;
   grid-column: 2;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.primary-color {
+  background-color: tomato;
+}
+
+.alternate-color {
+  background-color: #f0f0f0;
 }

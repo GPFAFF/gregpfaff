@@ -6,6 +6,7 @@ import React, {
 import {
   BrowserRouter as Router
 } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
@@ -36,6 +37,7 @@ const App = () => {
         <section>
           <Sidebar className="sidebar">
             <Nav
+              ariaLabel="Open side menu"
               onClick={() => dispatch({ type: "ACTIVE" })}
             />
           </Sidebar>
@@ -43,9 +45,14 @@ const App = () => {
           <Sidebar className="sidebar">
             <Social />
           </Sidebar>
-          <div className="nav-arrow">
+          <Link
+            smooth to="#about"
+            className="nav-arrow"
+            tabIndex="0"
+            aria-label="Navigate to about section"
+          >
             <FaArrowDown />
-          </div>
+          </Link>
           <About className="block" />
           <Projects className="block" />
           <Resume className="block" />
