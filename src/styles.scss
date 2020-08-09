@@ -1,0 +1,39 @@
+body {
+  background-color: #fff;
+  margin: 0;
+}
+
+#app {
+  height: 100vh;
+
+  > div > section {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    grid-template-rows: auto;
+  }
+}
+
+.nav-arrow {
+  grid-column: 2;
+  justify-self: center;
+  margin-top: 20px;
+
+  > svg {
+    font-size: 28px;
+  }
+}
+
+.visuallyhidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.block {
+  height: 50vh;
+  grid-column: 2;
+}

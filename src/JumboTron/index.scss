@@ -1,0 +1,46 @@
+[role="main"] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 80vh;
+
+  .left {
+    background-color: tomato;
+    display: grid;
+
+    > h2 {
+      align-self: center;
+      justify-self: end;
+      text-transform: uppercase;
+      display: grid;
+      font-size: 160px;
+      position: relative;
+      left: 150px;
+      line-height: 1;
+      font-family: 'Titillium Web', sans-serif;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+
+      > .title {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        line-height: 130px;
+
+        span:nth-of-type(2) {
+          display: grid;
+          grid-template-columns: 1fr 10px;
+          align-items: end;
+          > .period {
+            background-color: tomato;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    background-color: #f0f0f0;
+  }
+}

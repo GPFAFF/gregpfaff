@@ -1,0 +1,9 @@
+.sidebar {
+  align-self: center;
+
+  > div {
+    display: grid;
+    justify-items: center;
+    row-gap: 14px;
+  }
+}
