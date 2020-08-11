@@ -6,6 +6,16 @@ import React, {
 import './index.scss';
 
 export const Contact = ({ className }) => {
+
+  const encode = (data) => {
+    const formData = new FormData();
+    Object.keys(data).map(k=>{
+      formData.append(k, data[k])
+    });
+
+    return formData
+  }
+
   const initialFormState = {
     name: '',
     email: '',
@@ -14,6 +24,8 @@ export const Contact = ({ className }) => {
 
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState(initialFormState);
+  const [status, setStatus] = useState('');
+
   const { name, email, message } = initialFormState;
 
   const handleChange = event => {
@@ -30,8 +42,8 @@ export const Contact = ({ className }) => {
         ...formData,
       })
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
+      .then(() => setStatus("Form Submission Successful!"))
+      .catch(error => setStatus("Form Submission Failed!"));
 
     e.preventDefault();
   };
