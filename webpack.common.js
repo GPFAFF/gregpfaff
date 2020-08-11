@@ -27,7 +27,11 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    modules: [
+      path.resolve(__dirname, './src'),
+      path.resolve(__dirname, './node_modules'),
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -35,6 +39,17 @@ module.exports = {
       template: 'index.html'
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+      }
+    }
+  },
   output: {
     filename: 'bundle.js',
     publicPath: '/',

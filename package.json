@@ -81,5 +81,8 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ]
+  },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^3.8.0"
   }
 }
