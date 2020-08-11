@@ -1,20 +1,16 @@
 import React, {
   useState,
-  useCallback
 } from 'react'
+import { InputGroup } from './input';
 
 import './index.scss';
 
 export const Contact = ({ className }) => {
-
-  const encode = (data) => {
-    const formData = new FormData();
-    Object.keys(data).map(k=>{
-      formData.append(k, data[k])
-    });
-
-    return formData
-  }
+  const encode = (data) => (
+    Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+  );
 
   const initialFormState = {
     name: '',
@@ -24,7 +20,6 @@ export const Contact = ({ className }) => {
 
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState(initialFormState);
-  const [status, setStatus] = useState('');
 
   const { name, email, message } = initialFormState;
 
@@ -33,70 +28,68 @@ export const Contact = ({ className }) => {
     setFormData({...formData, [name]: value});
   };
 
-  const handleSubmit = event => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact",
-        ...formData,
-      })
-    })
-      .then(() => setStatus("Form Submission Successful!"))
-      .catch(error => setStatus("Form Submission Failed!"));
+  const isFormValid = () => (
+    Object.values(formData).every(Boolean)
+  );
 
-    e.preventDefault();
+  const handleSubmit = event => {
+    if (isFormValid()) {
+      fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: encode({
+          "form-name": "contact",
+          ...formData,
+        })
+      })
+        .then(() => setStatus("Form Submission Successful!"))
+        .catch(error => setStatus("Form Submission Failed!"));
+    }
+
+    event.preventDefault();
   };
 
   return (
     <section id="contact" className={className}>
       <div className="primary-color">
         <h2>Drop me a line!</h2>
-        <p>I would love to learn about your project or opportunity.</p>
+        <p>I would love to learn about your company or opportunity.</p>
       </div>
       <div className="alternate-color">
         <form
+          name="contact"
+          data-netlify="true"
           onSubmit={handleSubmit}
         >
-        <p>
-          <label htmlFor="name">
-            Your Name:
-          </label>
-          <input
+          <InputGroup
             id="name"
             type="text"
             name="name"
+            label="Your Name:"
             value={name}
             required
             onChange={handleChange}
           />
-        </p>
-        <p>
-          <label htmlFor="email">
-            Your Email:
-          </label>
-          <input
+          <InputGroup
             id="email"
             type="email"
             name="email"
+            label="Your Email:"
             value={email}
             required
             onChange={handleChange}
           />
-        </p>
-        <p>
-          <label htmlFor="message">
-            Your Message:
-          </label>
-          <textarea
+          <InputGroup
             id="message"
             type="text"
             name="message"
+            label="Your Message:"
             value={message}
             required
             onChange={handleChange}
           />
-        </p>
         <p>
           <button type="submit">Send</button>
         </p>
