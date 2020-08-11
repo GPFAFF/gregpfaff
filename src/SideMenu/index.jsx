@@ -1,4 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, {
+  useState,
+  useContext
+} from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { navLinks } from '../constants';
 import { AiOutlineClose } from 'react-icons/ai';

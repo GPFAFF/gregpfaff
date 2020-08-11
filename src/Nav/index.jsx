@@ -7,7 +7,7 @@ export const Nav = ({ onClick, ariaLabel }) => {
   return (
     <div
       className="menu-nav"
-      ariaLabel={ariaLabel}
+      aria-label={ariaLabel}
       onClick={onClick}
       tabIndex="0"
     >
