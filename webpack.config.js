@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -31,8 +32,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new TerserPlugin()
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
   devServer: {
     contentBase: './dist',
     hot: true
