@@ -41,6 +41,10 @@ body {
   justify-content: center;
   align-content: center;
   grid-template-columns: repeat(2, 1fr);
+
+  > div {
+    padding: 40px;
+  }
 }
 
 .primary-color {
@@ -49,4 +53,14 @@ body {
 
 .alternate-color {
   background-color: #f0f0f0;
+}
+
+h1, h2, h3 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
 }

@@ -2,16 +2,11 @@ import React, {
   useState,
 } from 'react'
 import { InputGroup } from './input';
+import { encode } from '../helpers';
 
 import './index.scss';
 
 export const Contact = ({ className }) => {
-  const encode = (data) => (
-    Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-  );
-
   const initialFormState = {
     contactName: '',
     email: '',
@@ -23,6 +18,7 @@ export const Contact = ({ className }) => {
 
   const handleChange = event => {
     const { name, value } = event.target;
+    event.persist();
     setFormData({...formData, [name]: value});
   };
 
