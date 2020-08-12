@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-export const InputGroup = ({
+export const TextAreaGroup = ({
   id, type, label, name, value, required, handleChange
 }) => {
   return (
@@ -8,7 +8,7 @@ export const InputGroup = ({
       <label htmlFor={id}>
         {label}
       </label>
-      <input
+      <textarea
         id={id}
         type={type}
         name={name}
@@ -18,4 +18,4 @@ export const InputGroup = ({
       />
     </p>
   )
-};
+}
