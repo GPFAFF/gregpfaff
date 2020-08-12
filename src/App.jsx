@@ -17,6 +17,7 @@ import { JumboTron } from './JumboTron';
 import { About } from './About';
 import { Projects } from './Projects';
 import { Contact } from './Contact';
+import { Resume } from './Resume';
 import { FaArrowDown } from 'react-icons/fa';
 import { initialState, toggleReducer } from './reducers/toggle';
 import { AppProvider, AppContext } from './Context';

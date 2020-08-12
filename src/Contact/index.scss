@@ -1,3 +1,14 @@
 #contact {
   height: 50vh;
+
+  .primary-color > h2 {
+    font-size: 40px;
+    font-weight: 700;
+    position: unset;
+    align-self: unset;
+    justify-self: unset;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.25;
+  }
 }

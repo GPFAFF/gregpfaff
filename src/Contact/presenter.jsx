@@ -18,9 +18,13 @@ export const ContactForm = ({ className, handleChange, formData, handleSubmit, s
         ) : (
           <form
             name="contact"
-            netlify
             data-netlify="true"
             onSubmit={handleSubmit}
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            id="contact"
+            noValidate
           >
             <InputGroup
               id="name"

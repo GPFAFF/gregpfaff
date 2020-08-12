@@ -1,16 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Resume } from '../Resume';
+import './index.scss';
 
 export const Projects = ({ className }) => {
   return (
-    <div id="projects" className={className}>
+    <section id="projects" className={className}>
       <div className="primary-color">
-        <p>
-          Lorem Ipsum Lorem Ipsum
-          Lorem Ipsum Lorem Ipsum
-          Lorem Ipsum Lorem Ipsum
-          Lorem Ipsum Lorem Ipsum
-          Lorem Ipsum Lorem Ipsum
-        </p>
+        <Resume />
       </div>
       <div className="alternate-color">
         <p>
@@ -21,6 +17,6 @@ export const Projects = ({ className }) => {
           Lorem Ipsum Lorem Ipsum
         </p>
       </div>
-    </div>
+    </section>
   )
 }
