@@ -2,9 +2,13 @@ import React from 'react'
 import './index.scss';
 
 const Footer = ({ className }) => {
+  const renderTimeStamp = () => (
+    new Date().getFullYear()
+  )
+
   return (
     <footer className={className}>
-      <p>Here is the footer</p>
+      <p>&copy;1982 - {renderTimeStamp()}</p>
     </footer>
   )
 };

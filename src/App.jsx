@@ -24,7 +24,8 @@ const AboutComponent = React.lazy(() => import('./About'));
 const ProjectsComponent = React.lazy(() => import('./Projects'));
 const ContactComponent = React.lazy(() => import('./Contact'));
 
-import Loading from './Loading';
+import { Loading } from './Loading';
+import { NavigationArrow } from './NavigationArrow';
 import { initialState, toggleReducer } from './reducers/toggle';
 import { AppProvider, AppContext } from './Context';
 
@@ -58,7 +59,7 @@ const App = () => {
                   <AboutComponent />
                 </Route>
                 <Route path="/projects">
-                  <ProjectsComponent />
+                  <ProjectsComponent className="projects" />
                 </Route>
                 <Route path="/contact">
                   <ContactComponent />
@@ -68,17 +69,10 @@ const App = () => {
             <SidebarComponent className="sidebar">
               <SocialComponent />
             </SidebarComponent>
-            </section>
-
-            <Link
-              to="/about"
-              className="nav-arrow"
-              tabIndex="0"
-              aria-label="Navigate to about section"
-            >
-              <FaArrowDown />
-            </Link>
-          <FooterComponent className="block" />
+          </section>
+          <NavigationArrow
+            path={pathname}
+          />
         </div>
       </Suspense>
     </Fragment>

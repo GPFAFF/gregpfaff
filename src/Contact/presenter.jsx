@@ -18,7 +18,6 @@ export const ContactForm = ({ className, handleChange, formData, handleSubmit, s
         ) : (
           <form
             name="contact"
-            data-netlify="true"
             onSubmit={handleSubmit}
             method="POST"
             data-netlify="true"

@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss';
 
-const Loading = () => {
+export const Loading = () => {
   return (
     <div aria-label="Loading" className="loading">
       <div aria-hidden="true"></div>
