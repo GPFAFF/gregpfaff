@@ -44,12 +44,18 @@ export const Contact = ({ className }) => {
   };
 
   return (
-    <ContactForm
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      className={className}
-      formData={formData}
-    />
+    <Fragment>
+      {status ? (
+        <h2>{status}</h2>
+      ) : (
+        <ContactForm
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          className={className}
+          formData={formData}
+        />
+      )}
+    </Fragment>
   )
 }
 
