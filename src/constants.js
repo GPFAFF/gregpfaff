@@ -26,8 +26,8 @@ export const socialLinks = [
 ]
 
 export const navLinks = [
-  { url: '#home', name: 'Home' },
-  { url: '#about', name: 'About' },
-  { url: '#projects', name: 'Projects' },
-  { url: '#contact', name: 'Contact Me' },
+  { url: '/', name: 'Home' },
+  { url: '/about', name: 'About' },
+  { url: '/projects', name: 'Projects' },
+  { url: '/contact', name: 'Contact Me' },
 ];

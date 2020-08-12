@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { RiHome3Line } from 'react-icons/ri';
 import { InputGroup } from './input';
 import { TextAreaGroup } from './textarea';
@@ -7,7 +7,7 @@ export const ContactForm = ({ className, handleChange, formData, handleSubmit, s
   const { contactName, email, message } = formData;
 
   return (
-    <section id="contact" className={className}>
+    <Fragment>
       <div className="alternate-color">
         <h2>Drop me a line!</h2>
         <p>I would love to learn about your company or opportunity.</p>
@@ -59,6 +59,6 @@ export const ContactForm = ({ className, handleChange, formData, handleSubmit, s
           </form>
         )}
       </div>
-    </section>
+    </Fragment>
   )
 }

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Resume } from '../Resume';
+import { Link } from 'react-router-dom';
+import { FaArrowDown } from 'react-icons/fa';
 import './index.scss';
 
-const Projects = ({ className }) => {
+const Projects = () => {
   return (
-    <section id="projects" className={className}>
+    <Fragment>
       <div className="primary-color">
         <Resume />
       </div>
@@ -17,7 +19,7 @@ const Projects = ({ className }) => {
           Lorem Ipsum Lorem Ipsum
         </p>
       </div>
-    </section>
+    </Fragment>
   )
 };
 

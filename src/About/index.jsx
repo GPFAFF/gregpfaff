@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react';
 
-const About = ({ className }) => {
+const About = () => {
   return (
-    <section id="about" className={className}>
+    <Fragment>
       <div className="alternate-color">
         <h2>About Me</h2>
       </div>
@@ -15,7 +15,7 @@ const About = ({ className }) => {
           Lorem Ipsum Lorem Ipsum
         </p>
       </div>
-    </section>
+    </Fragment>
   )
 };
 
