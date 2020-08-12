@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { encode } from '../helpers';
 import { ContactForm } from './presenter';
 
@@ -44,18 +44,13 @@ export const Contact = ({ className }) => {
   };
 
   return (
-    <Fragment>
-      {status ? (
-        <h2>{status}</h2>
-      ) : (
-        <ContactForm
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-          className={className}
-          formData={formData}
-        />
-      )}
-    </Fragment>
+    <ContactForm
+      status={status}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
+      className={className}
+      formData={formData}
+    />
   )
 }
 
