@@ -4,7 +4,7 @@ import { ContactForm } from './presenter';
 
 import './index.scss';
 
-export const Contact = ({ className }) => {
+const Contact = ({ className }) => {
   const initialFormState = {
     contactName: '',
     email: '',
@@ -52,6 +52,8 @@ export const Contact = ({ className }) => {
       formData={formData}
     />
   )
-}
+};
+
+export default Contact;
 
 

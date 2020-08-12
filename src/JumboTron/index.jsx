@@ -2,7 +2,7 @@ import React from 'react'
 
 import './index.scss';
 
-export const JumboTron = () => {
+const JumboTron = () => {
   return (
     <section role="main">
       <div className="primary-color">
@@ -18,4 +18,6 @@ export const JumboTron = () => {
       <div className="alternate-color"/>
     </section>
   )
-}
+};
+
+export default JumboTron;

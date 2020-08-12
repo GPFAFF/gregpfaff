@@ -2,7 +2,7 @@ import React from 'react';
 import { Resume } from '../Resume';
 import './index.scss';
 
-export const Projects = ({ className }) => {
+const Projects = ({ className }) => {
   return (
     <section id="projects" className={className}>
       <div className="primary-color">
@@ -19,4 +19,6 @@ export const Projects = ({ className }) => {
       </div>
     </section>
   )
-}
+};
+
+export default Projects;

@@ -1,23 +1,23 @@
 import React, {
   Fragment,
   useState,
-  useContext
+  useContext,
+  Suspense,
 } from 'react';
 import {
   BrowserRouter as Router
 } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
-import { Header } from './Header';
-import { Sidebar } from './Sidebar';
-import { Footer } from './Footer';
-import { Nav } from './Nav';
-import { Social } from './Social';
-import { SideMenu } from './SideMenu';
-import { JumboTron } from './JumboTron';
-import { About } from './About';
-import { Projects } from './Projects';
-import { Contact } from './Contact';
-import { Resume } from './Resume';
+const HeaderComponent = React.lazy(() => import('./Header'));
+const SidebarComponent = React.lazy(() => import('./Sidebar'));
+const FooterComponent = React.lazy(() => import('./Footer'));
+const NavComponent = React.lazy(() => import('./Nav'));
+const SocialComponent = React.lazy(() => import('./Social'));
+const SideMenuComponent = React.lazy(() => import('./SideMenu'));
+const JumboTronComponent = React.lazy(() => import('./JumboTron'));
+const AboutComponent = React.lazy(() => import('./About'));
+const ProjectsComponent = React.lazy(() => import('./Projects'));
+const ContactComponent = React.lazy(() => import('./Contact'));
 import { FaArrowDown } from 'react-icons/fa';
 import { initialState, toggleReducer } from './reducers/toggle';
 import { AppProvider, AppContext } from './Context';
@@ -29,35 +29,37 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <Header
-          title="Greg Pfaff"
-        />
-        <SideMenu />
-        <section>
-          <Sidebar className="sidebar">
-            <Nav
-              ariaLabel="Open side menu"
-              onClick={() => dispatch({ type: "ACTIVE" })}
-            />
-          </Sidebar>
-          <JumboTron />
-          <Sidebar className="sidebar">
-            <Social />
-          </Sidebar>
-          <Link
-            smooth to="#about"
-            className="nav-arrow"
-            tabIndex="0"
-            aria-label="Navigate to about section"
-          >
-            <FaArrowDown />
-          </Link>
-          <About className="block" />
-          <Projects className="block" />
-          <Contact className="block" />
-        </section>
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div>
+          <HeaderComponent
+            title="Greg Pfaff"
+          />
+          <SideMenuComponent />
+          <section>
+            <SidebarComponent className="sidebar">
+              <NavComponent
+                ariaLabel="Open side menu"
+                onClick={() => dispatch({ type: "ACTIVE" })}
+              />
+            </SidebarComponent>
+            <JumboTronComponent />
+            <SidebarComponent className="sidebar">
+              <SocialComponent />
+            </SidebarComponent>
+            <Link
+              smooth to="#about"
+              className="nav-arrow"
+              tabIndex="0"
+              aria-label="Navigate to about section"
+            >
+              <FaArrowDown />
+            </Link>
+            <AboutComponent className="block" />
+            <ProjectsComponent className="block" />
+            <ContactComponent className="block" />
+          </section>
+        </div>
+      </Suspense>
     </Router>
   )
 };

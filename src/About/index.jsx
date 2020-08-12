@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const About = ({ className }) => {
+const About = ({ className }) => {
   return (
     <section id="about" className={className}>
       <div className="alternate-color">
@@ -17,4 +17,6 @@ export const About = ({ className }) => {
       </div>
     </section>
   )
-}
+};
+
+export default About;

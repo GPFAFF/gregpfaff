@@ -1,10 +1,12 @@
 import React from 'react'
 import './index.scss';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer>
       Here is the footer
     </footer>
   )
-}
+};
+
+export default Footer;

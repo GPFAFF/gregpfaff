@@ -9,7 +9,7 @@ import { AppContext } from '../Context';
 
 import './index.scss';
 
-export const SideMenu = () => {
+const SideMenu = () => {
   const { state, dispatch } = useContext(AppContext);
   const isActive = state.active ? 'active' : '';
   const handleToggle = () => {
@@ -29,4 +29,6 @@ export const SideMenu = () => {
     ))}
     </ul>
   )
-}
+};
+
+export default SideMenu;

@@ -3,7 +3,7 @@ import { RiMenu3Line } from 'react-icons/ri';
 
 import './index.scss';
 
-export const Nav = ({ onClick, ariaLabel }) => {
+const Nav = ({ onClick, ariaLabel }) => {
   return (
     <div
       className="menu-nav"
@@ -14,4 +14,6 @@ export const Nav = ({ onClick, ariaLabel }) => {
       <RiMenu3Line />
     </div>
   )
-}
+};
+
+export default Nav;

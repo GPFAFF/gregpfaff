@@ -5,7 +5,7 @@ import { socialLinks } from '../constants';
 
 import './index.scss';
 
-export const Social = () => {
+const Social = () => {
   return (
     <div className="social-links">
       {socialLinks.map(({ target, icon, name }) =>
@@ -16,4 +16,6 @@ export const Social = () => {
       )}
     </div>
   )
-}
+};
+
+export default Social;
