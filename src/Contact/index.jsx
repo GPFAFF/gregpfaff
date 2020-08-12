@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-} from 'react'
+import React, { useState } from 'react'
 import { encode } from '../helpers';
 import { ContactForm } from './presenter';
 
@@ -27,7 +24,7 @@ export const Contact = ({ className }) => {
     Object.values(formData).every(Boolean)
   );
 
-  const handleSubmit = useCallback(event => {
+  const handleSubmit = event => {
     if (isFormValid()) {
       fetch("/", {
         method: "POST",
@@ -44,7 +41,7 @@ export const Contact = ({ className }) => {
     }
 
     event.preventDefault();
-  }, [formData]);
+  };
 
   return (
     <ContactForm
