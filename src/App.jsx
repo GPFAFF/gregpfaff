@@ -2,12 +2,17 @@ import React, {
   Fragment,
   useState,
   useContext,
-  Suspense,
+  Suspense
 } from 'react';
 import {
-  BrowserRouter as Router
+  Switch,
+  Route,
+  Link,
+  useLocation,
 } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { navLinks } from './constants.js';
+
 const HeaderComponent = React.lazy(() => import('./Header'));
 const SidebarComponent = React.lazy(() => import('./Sidebar'));
 const FooterComponent = React.lazy(() => import('./Footer'));
@@ -20,7 +25,6 @@ const ProjectsComponent = React.lazy(() => import('./Projects'));
 const ContactComponent = React.lazy(() => import('./Contact'));
 
 import Loading from './Loading';
-import { FaArrowDown } from 'react-icons/fa';
 import { initialState, toggleReducer } from './reducers/toggle';
 import { AppProvider, AppContext } from './Context';
 
@@ -28,9 +32,10 @@ import './styles.scss';
 
 const App = () => {
   const { state, dispatch } = useContext(AppContext);
+  const { pathname } = useLocation();
 
   return (
-    <Router>
+    <Fragment>
       <Suspense fallback={<Loading/>}>
         <div>
           <HeaderComponent
@@ -44,26 +49,39 @@ const App = () => {
                 onClick={() => dispatch({ type: "ACTIVE" })}
               />
             </SidebarComponent>
-            <JumboTronComponent />
+            <section role="main">
+              <Switch>
+                <Route exact path="/">
+                  <JumboTronComponent />
+                </Route>
+                <Route path="/about">
+                  <AboutComponent />
+                </Route>
+                <Route path="/projects">
+                  <ProjectsComponent />
+                </Route>
+                <Route path="/contact">
+                  <ContactComponent />
+                </Route>
+              </Switch>
+            </section>
             <SidebarComponent className="sidebar">
               <SocialComponent />
             </SidebarComponent>
+            </section>
+
             <Link
-              smooth to="#about"
+              to="/about"
               className="nav-arrow"
               tabIndex="0"
               aria-label="Navigate to about section"
             >
               <FaArrowDown />
             </Link>
-            <AboutComponent className="block" />
-            <ProjectsComponent className="block" />
-            <ContactComponent className="block" />
-            <FooterComponent className="block" />
-          </section>
+          <FooterComponent className="block" />
         </div>
       </Suspense>
-    </Router>
+    </Fragment>
   )
 };
 

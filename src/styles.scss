@@ -10,6 +10,7 @@ body {
     display: grid;
     grid-template-columns: 40px 1fr 40px;
     grid-template-rows: auto;
+    height: 100%;
   }
 }
 
@@ -37,15 +38,21 @@ body {
 .block {
   grid-column: 2;
   justify-content: center;
-  margin: 80px 0;
 }
 
-.primary-color {
-  background-color: tomato;
-}
+[role="main"] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 80vh;
 
-.alternate-color {
-  background-color: #f0f0f0;
+  .primary-color {
+    background-color: tomato;
+    display: grid;
+  }
+
+  .alternate-color {
+    background-color: #f0f0f0;
+  }
 }
 
 h1, h2, h3 {

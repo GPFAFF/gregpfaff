@@ -1,12 +1,5 @@
-[role="main"], section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 80vh;
-
+[role="main"] {
   .primary-color {
-    background-color: tomato;
-    display: grid;
-
     > h2 {
       align-self: center;
       justify-self: end;
@@ -38,9 +31,5 @@
         }
       }
     }
-  }
-
-  .alternate-color {
-    background-color: #f0f0f0;
   }
 }
