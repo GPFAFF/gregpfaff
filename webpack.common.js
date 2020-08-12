@@ -1,6 +1,7 @@
 const path = require('path');
 const{ CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -44,19 +45,28 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'index.html'
-    })
+      template: 'index.html',
+      inject: true,
+      chunks: ['app', 'vendors'],
+    }),
   ],
   optimization: {
+    namedModules: true,
     splitChunks: {
-      chunks: 'all',
       cacheGroups: {
-        defaultVendors: {
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          name: 'vendors',
+          chunks: 'all',
         },
-      }
-    }
+        styles: {
+          test: /\.css$/,
+          name: 'styles',
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   output: {
     filename: 'bundle.js',

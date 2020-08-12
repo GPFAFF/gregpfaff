@@ -29,6 +29,5 @@ export const navLinks = [
   { url: '#home', name: 'Home' },
   { url: '#about', name: 'About' },
   { url: '#projects', name: 'Projects' },
-  { url: '#resume', name: 'Resume' },
   { url: '#contact', name: 'Contact Me' },
 ];

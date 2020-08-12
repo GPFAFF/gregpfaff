@@ -18,6 +18,8 @@ const JumboTronComponent = React.lazy(() => import('./JumboTron'));
 const AboutComponent = React.lazy(() => import('./About'));
 const ProjectsComponent = React.lazy(() => import('./Projects'));
 const ContactComponent = React.lazy(() => import('./Contact'));
+
+import Loading from './Loading';
 import { FaArrowDown } from 'react-icons/fa';
 import { initialState, toggleReducer } from './reducers/toggle';
 import { AppProvider, AppContext } from './Context';
@@ -29,7 +31,7 @@ const App = () => {
 
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading/>}>
         <div>
           <HeaderComponent
             title="Greg Pfaff"
@@ -57,6 +59,7 @@ const App = () => {
             <AboutComponent className="block" />
             <ProjectsComponent className="block" />
             <ContactComponent className="block" />
+            <FooterComponent className="block" />
           </section>
         </div>
       </Suspense>

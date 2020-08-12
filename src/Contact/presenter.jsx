@@ -8,11 +8,11 @@ export const ContactForm = ({ className, handleChange, formData, handleSubmit, s
 
   return (
     <section id="contact" className={className}>
-      <div className="primary-color">
+      <div className="alternate-color">
         <h2>Drop me a line!</h2>
         <p>I would love to learn about your company or opportunity.</p>
       </div>
-      <div className="alternate-color">
+      <div className="primary-color">
       {status ? (
         <h3>{status}</h3>
         ) : (
