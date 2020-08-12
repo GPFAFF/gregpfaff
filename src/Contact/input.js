@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const InputGroup = ({
-  id, type, label, name, value, required, onChange
+  id, type, label, name, value, required, handleChange
 }) => {
   return (
     <p>
@@ -14,7 +14,7 @@ export const InputGroup = ({
         name={name}
         value={value}
         required
-        onChange={onChange}
+        onChange={handleChange}
       />
     </p>
   )

@@ -16,7 +16,6 @@ import { SideMenu } from './SideMenu';
 import { JumboTron } from './JumboTron';
 import { About } from './About';
 import { Projects } from './Projects';
-import { Resume } from './Resume';
 import { Contact } from './Contact';
 import { FaArrowDown } from 'react-icons/fa';
 import { initialState, toggleReducer } from './reducers/toggle';
@@ -55,7 +54,6 @@ const App = () => {
           </Link>
           <About className="block" />
           <Projects className="block" />
-          <Resume className="block" />
           <Contact className="block" />
         </section>
       </div>

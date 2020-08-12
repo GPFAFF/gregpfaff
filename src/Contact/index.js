@@ -13,15 +13,13 @@ export const Contact = ({ className }) => {
   );
 
   const initialFormState = {
-    name: '',
+    contactName: '',
     email: '',
     message: ''
   };
 
   const [formData, setFormData] = useState(initialFormState);
-  const [errors, setErrors] = useState(initialFormState);
-
-  const { name, email, message } = initialFormState;
+  const { contactName, email, message } = initialFormState;
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -68,9 +66,9 @@ export const Contact = ({ className }) => {
             type="text"
             name="name"
             label="Your Name:"
-            value={name}
+            value={contactName}
             required
-            onChange={handleChange}
+            handleChange={handleChange}
           />
           <InputGroup
             id="email"
@@ -79,7 +77,7 @@ export const Contact = ({ className }) => {
             label="Your Email:"
             value={email}
             required
-            onChange={handleChange}
+            handleChange={handleChange}
           />
           <InputGroup
             id="message"
@@ -88,7 +86,7 @@ export const Contact = ({ className }) => {
             label="Your Message:"
             value={message}
             required
-            onChange={handleChange}
+            handleChange={handleChange}
           />
         <p>
           <button type="submit">Send</button>
