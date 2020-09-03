@@ -2,9 +2,13 @@ import React from 'react';
 import { Resume } from '../Resume';
 import './index.scss';
 
-const Projects = ({ className }) => {
+const Projects = ({ className, ref }) => {
   return (
-    <section id="projects" className={className}>
+    <section
+      id="projects"
+      className={className}
+      ref={ref}
+    >
       <div className="primary-color">
         <Resume />
       </div>

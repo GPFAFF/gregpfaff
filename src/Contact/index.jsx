@@ -4,7 +4,7 @@ import { ContactForm } from './presenter';
 
 import './index.scss';
 
-const Contact = ({ className }) => {
+const Contact = ({ className, ref }) => {
   const initialFormState = {
     contactName: '',
     email: '',
@@ -45,6 +45,7 @@ const Contact = ({ className }) => {
 
   return (
     <ContactForm
+      ref={ref}
       status={status}
       handleSubmit={handleSubmit}
       handleChange={handleChange}

@@ -16,7 +16,6 @@ body {
 .nav-arrow {
   grid-column: 2;
   justify-self: center;
-  margin-top: 30px;
   color: black;
 
   > svg {
@@ -37,7 +36,19 @@ body {
 .block {
   grid-column: 2;
   justify-content: center;
-  margin: 80px 0;
+  margin: 50px 0;
+
+  &.full {
+    opacity: 1;
+    transition: opacity 400ms ease 0ms;
+  }
+
+  &.blur {
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(1.1);
+    transition: visibility 0ms ease 400ms;
+  }
 }
 
 .primary-color {

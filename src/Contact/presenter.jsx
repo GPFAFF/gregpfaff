@@ -3,11 +3,22 @@ import { RiHome3Line } from 'react-icons/ri';
 import { InputGroup } from './input';
 import { TextAreaGroup } from './textarea';
 
-export const ContactForm = ({ className, handleChange, formData, handleSubmit, status }) => {
+export const ContactForm = ({
+  className,
+  handleChange,
+  formData,
+  handleSubmit,
+  status,
+  ref
+}) => {
   const { contactName, email, message } = formData;
 
   return (
-    <section id="contact" className={className}>
+    <section
+      id="contact"
+      className={className}
+      ref={ref}
+    >
       <div className="alternate-color">
         <h2>Drop me a line!</h2>
         <p>I would love to learn about your company or opportunity.</p>
