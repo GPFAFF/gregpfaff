@@ -46,7 +46,6 @@ const Contact = ({ className, ref }) => {
 
   return (
     <ContactForm
-      name="contact"
       id="contact"
       status={status}
       handleSubmit={handleSubmit}

@@ -9,7 +9,6 @@ export const ContactForm = ({
   formData,
   handleSubmit,
   status,
-  name,
   id,
 }) => {
   const { formName, name, email, message } = formData;
