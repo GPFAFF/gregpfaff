@@ -8,6 +8,9 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
+
+import { Block } from './Block';
+
 const HeaderComponent = React.lazy(() => import('./Header'));
 const SidebarComponent = React.lazy(() => import('./Sidebar'));
 const FooterComponent = React.lazy(() => import('./Footer'));
@@ -27,7 +30,7 @@ import { AppProvider, AppContext } from './Context';
 import './styles.scss';
 
 const App = () => {
-  const { state, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
 
   return (
     <Router>
@@ -56,10 +59,18 @@ const App = () => {
             >
               <FaArrowDown />
             </Link>
-            <AboutComponent className="block" />
-            <ProjectsComponent className="block" />
-            <ContactComponent className="block" />
-            <FooterComponent className="block" />
+            <Block className="block">
+              <AboutComponent className="block-child" />
+            </Block>
+            <Block className="block">
+              <ProjectsComponent className="block-child" />
+            </Block>
+            <Block className="block">
+              <ContactComponent className="block-child" />
+            </Block>
+            <Block className="block footer">
+              <FooterComponent className="block-child" />
+            </Block>
           </section>
         </div>
       </Suspense>

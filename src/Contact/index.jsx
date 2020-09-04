@@ -4,7 +4,7 @@ import { ContactForm } from './presenter';
 
 import './index.scss';
 
-const Contact = ({ className }) => {
+const Contact = ({ className, ref }) => {
   const initialFormState = {
     name: 'contact',
     contactName: '',

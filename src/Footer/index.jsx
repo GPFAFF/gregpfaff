@@ -1,9 +1,12 @@
 import React from 'react'
 import './index.scss';
 
-const Footer = ({ className }) => {
+const Footer = ({ className, ref }) => {
   return (
-    <footer className={className}>
+    <footer
+      className={className}
+      ref={ref}
+    >
       Here is the footer
     </footer>
   )

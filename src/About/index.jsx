@@ -1,8 +1,12 @@
 import React from 'react'
 
-const About = ({ className }) => {
+const About = ({ className, ref }) => {
   return (
-    <section id="about" className={className}>
+    <section
+      id="about"
+      className={className}
+      ref={ref}
+    >
       <div className="alternate-color">
         <h2>About Me</h2>
       </div>
