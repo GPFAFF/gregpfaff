@@ -68,7 +68,7 @@ const App = () => {
             <Block className="block">
               <ContactComponent className="block-child" />
             </Block>
-            <Block>
+            <Block className="block footer">
               <FooterComponent className="block-child" />
             </Block>
           </section>

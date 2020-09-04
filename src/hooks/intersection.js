@@ -12,10 +12,11 @@ export const useIntersectionObserver = ({
       threshold
     });
     const current = target.current;
-    observer.observe(current);
 
-    () => observer.unobserve(current);
-  });
+    if (current) {
+      observer.observe(current);
+    }
+  }, []);
 };
 
 export default useIntersectionObserver;

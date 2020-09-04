@@ -26,17 +26,15 @@ export const Block = ({ children, className, height, width }) => {
 
   return (
     <div
-      className={className}
+      className={
+        isVisible
+          ? `${className} full`
+          : `${className} blur`
+        }
       ref={ref}
     >
       {isVisible &&
-        <div
-          className={
-            isVisible
-              ? `${className} full`
-              : `${className} blur`
-            }
-        >
+        <div className={className}>
           {children}
         </div>
       }
