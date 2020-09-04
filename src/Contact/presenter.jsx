@@ -12,7 +12,7 @@ export const ContactForm = ({
   name,
   id,
 }) => {
-  const { contactName, email, message } = formData;
+  const { formName, name, email, message } = formData;
 
   return (
     <section className={className}>
@@ -25,7 +25,7 @@ export const ContactForm = ({
         <h3>{status}</h3>
         ) : (
           <form
-            name={name}
+            name={formName}
             data-netlify="true"
             onSubmit={handleSubmit}
             data-netlify-honeypot="bot-field"
@@ -33,13 +33,13 @@ export const ContactForm = ({
             noValidate
             method="POST"
           >
-            <input type="hidden" name={name} value="contact" />
+            <input type="hidden" name={formName} value="contact" />
             <InputGroup
               id="name"
               type="text"
               name="name"
               label="Your Name:"
-              value={contactName}
+              value={name}
               required
               handleChange={handleChange}
             />

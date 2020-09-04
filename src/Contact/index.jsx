@@ -6,15 +6,15 @@ import './index.scss';
 
 const Contact = ({ className, ref }) => {
   const initialFormState = {
-    name: 'contact',
-    contactName: '',
+    formName: 'contact',
+    name: '',
     email: '',
     message: ''
   };
 
   const [formData, setFormData] = useState(initialFormState);
   const [status, setStatus] = useState(null)
-  const { contactName, email, message } = initialFormState;
+  const { formName, name, email, message } = initialFormState;
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -33,7 +33,7 @@ const Contact = ({ className, ref }) => {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         body: encode({
-          "form-name": initialFormState.name,
+          "form-name": initialFormState.formName,
           ...formData,
         })
       })
