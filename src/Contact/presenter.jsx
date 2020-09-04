@@ -14,21 +14,21 @@ export const ContactForm = ({
   const { formName, name, email, message } = formData;
 
   return (
-    <section className={className}>
+    <section id={id} className={className}>
       <div className="alternate-color">
         <h2>Drop me a line!</h2>
         <p>I would love to learn about your company or opportunity.</p>
       </div>
       <div className="primary-color">
       {status ? (
-        <h3>{status}</h3>
+        <h2>{status}</h2>
         ) : (
           <form
             name={formName}
             data-netlify="true"
             onSubmit={handleSubmit}
             data-netlify-honeypot="bot-field"
-            id={id}
+            id="contact-form"
             noValidate
             method="POST"
           >
