@@ -6,6 +6,7 @@ import './index.scss';
 
 const Contact = ({ className, ref }) => {
   const initialFormState = {
+    name: 'contact',
     contactName: '',
     email: '',
     message: ''
@@ -32,7 +33,7 @@ const Contact = ({ className, ref }) => {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         body: encode({
-          "form-name": formData.getAttribute("contact"),
+          "form-name": initialFormState.name,
           ...formData,
         })
       })
@@ -45,7 +46,8 @@ const Contact = ({ className, ref }) => {
 
   return (
     <ContactForm
-      ref={ref}
+      name="contact"
+      id="contact"
       status={status}
       handleSubmit={handleSubmit}
       handleChange={handleChange}
