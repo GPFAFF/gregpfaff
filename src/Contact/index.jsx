@@ -32,7 +32,7 @@ const Contact = ({ className, ref }) => {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         body: encode({
-          "form-name": "contact",
+          "form-name": formData.getAttribute("contact"),
           ...formData,
         })
       })

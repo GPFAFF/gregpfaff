@@ -1,7 +1,7 @@
 import React, {
   Fragment,
   useRef,
-  useState
+  useState,
 } from 'react'
 import { useIntersectionObserver } from '../hooks/intersection';
 
@@ -9,15 +9,17 @@ export const Block = ({ children, className, height, width }) => {
   if (!children) return;
 
   const ref = useRef();
+
   const [isVisible, setIsVisible] = useState(false);
-  console.log("AAAA", children, "B", isVisible)
 
   useIntersectionObserver({
     target: ref,
-    onIntersect: ([{ isIntersecting}], observeElement) => {
+    onIntersect: ([{ isIntersecting }], observerElement) => {
       if (isIntersecting) {
-        setIsVisible(true);
-        observeElement.unobserve(ref.current);
+        if (!isVisible) {
+          setIsVisible(true);
+        }
+        observerElement.unobserve(ref.current);
       }
     }
   });
@@ -26,12 +28,17 @@ export const Block = ({ children, className, height, width }) => {
     <div
       className={className}
       ref={ref}
-      className={isVisible ? `${className} full` : `${className} blur`}
     >
       {isVisible &&
-        <Fragment>
+        <div
+          className={
+            isVisible
+              ? `${className} full`
+              : `${className} blur`
+            }
+        >
           {children}
-        </Fragment>
+        </div>
       }
     </div>
   )

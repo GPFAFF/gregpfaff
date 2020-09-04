@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const useIntersectionObserver = ({
   target,
   onIntersect,
-  threshold = 0.2,
-  rootMargin = '0px',
+  rootMargin = "-130px",
+  threshold = 0.3,
 }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(onIntersect, {
@@ -15,7 +15,31 @@ export const useIntersectionObserver = ({
     observer.observe(current);
 
     () => observer.unobserve(current);
-  }, [target, onIntersect]);
+  });
 };
 
 export default useIntersectionObserver;
+
+// export const useOnScreen = (ref, threshold = 0.5, rootMargin = '-100px') => {
+//   const [isIntersecting, setIntersecting] = useState(false);
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         setIntersecting(entry.isIntersecting);
+//       },
+//       {
+//         rootMargin,
+//         threshold,
+//       }
+//     );
+//     if (ref.current) {
+//       observer.observe(ref.current);
+//     }
+//     // return () => {
+//     //   observer.unobserve(ref.current);
+//     // };
+//   }, []);
+
+//   return isIntersecting;
+// }

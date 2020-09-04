@@ -31,11 +31,11 @@ export const ContactForm = ({
             name="contact"
             data-netlify="true"
             onSubmit={handleSubmit}
-            method="POST"
-            data-netlify="true"
             data-netlify-honeypot="bot-field"
             id="contact"
             noValidate
+            method="post"
+            // action="/thanks/"
           >
             <InputGroup
               id="name"

@@ -60,16 +60,16 @@ const App = () => {
               <FaArrowDown />
             </Link>
             <Block className="block">
-              <AboutComponent className="block"/>
+              <AboutComponent className="block-child" />
             </Block>
             <Block className="block">
-              <ProjectsComponent className="block"/>
+              <ProjectsComponent className="block-child" />
             </Block>
             <Block className="block">
-              <ContactComponent className="block" />
+              <ContactComponent className="block-child" />
             </Block>
-            <Block className="block">
-              <FooterComponent className="block" />
+            <Block>
+              <FooterComponent className="block-child" />
             </Block>
           </section>
         </div>
