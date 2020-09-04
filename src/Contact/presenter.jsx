@@ -37,7 +37,7 @@ export const ContactForm = ({
             <InputGroup
               id="name"
               type="text"
-              name="contactName"
+              name="name"
               label="Your Name:"
               value={contactName}
               required
