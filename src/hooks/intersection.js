@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export const useIntersectionObserver = ({
   target,
   onIntersect,
-  rootMargin = "-130px",
+  rootMargin = "-100px",
   threshold = 0.3,
 }) => {
   useEffect(() => {

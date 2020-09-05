@@ -1,7 +1,12 @@
 [role="main"], section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 100vh;
+  // height: 100vh;
+
+  @media screen and (max-width: 767px) {
+    grid-template-rows: repeat(2, 400px);
+    grid-template-columns: unset;
+  }
 
   .primary-color {
     background-color: tomato;

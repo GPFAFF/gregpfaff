@@ -4,7 +4,7 @@ body {
 }
 
 #app {
-  height: 100vh;
+  // height: 100vh;
 
   > div > section {
     display: grid;
@@ -38,7 +38,7 @@ body {
   grid-column: 2;
   justify-content: center;
   margin: 40px 0;
-  height: 100vh;
+  // height: 100vh;
 
   &.full {
     opacity: 1;
