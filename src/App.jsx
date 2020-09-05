@@ -10,17 +10,27 @@ import {
 import { HashLink as Link } from 'react-router-hash-link';
 
 import { Block } from './Block';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Footer from './Footer';
+import Nav from './Nav';
+import Social from './Social';
+import SideMenu from './SideMenu';
+import JumboTron from './JumboTron';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
 
-const HeaderComponent = React.lazy(() => import('./Header'));
-const SidebarComponent = React.lazy(() => import('./Sidebar'));
-const FooterComponent = React.lazy(() => import('./Footer'));
-const NavComponent = React.lazy(() => import('./Nav'));
-const SocialComponent = React.lazy(() => import('./Social'));
-const SideMenuComponent = React.lazy(() => import('./SideMenu'));
-const JumboTronComponent = React.lazy(() => import('./JumboTron'));
-const AboutComponent = React.lazy(() => import('./About'));
-const ProjectsComponent = React.lazy(() => import('./Projects'));
-const ContactComponent = React.lazy(() => import('./Contact'));
+// const HeaderComponent = React.lazy(() => import('./Header'));
+// const SidebarComponent = React.lazy(() => import('./Sidebar'));
+// const FooterComponent = React.lazy(() => import('./Footer'));
+// const NavComponent = React.lazy(() => import('./Nav'));
+// const SocialComponent = React.lazy(() => import('./Social'));
+// const SideMenuComponent = React.lazy(() => import('./SideMenu'));
+// const JumboTronComponent = React.lazy(() => import('./JumboTron'));
+// const AboutComponent = React.lazy(() => import('./About'));
+// const ProjectsComponent = React.lazy(() => import('./Projects'));
+// const ContactComponent = React.lazy(() => import('./Contact'));
 
 import Loading from './Loading';
 import { FaArrowDown } from 'react-icons/fa';
@@ -36,21 +46,21 @@ const App = () => {
     <Router>
       <Suspense fallback={<Loading/>}>
         <div>
-          <HeaderComponent
+          <Header
             title="Greg Pfaff"
           />
-          <SideMenuComponent />
+          <SideMenu />
           <section>
-            <SidebarComponent className="sidebar">
-              <NavComponent
+            <Sidebar className="sidebar">
+              <Nav
                 ariaLabel="Open side menu"
                 onClick={() => dispatch({ type: "ACTIVE" })}
               />
-            </SidebarComponent>
-            <JumboTronComponent />
-            <SidebarComponent className="sidebar">
-              <SocialComponent />
-            </SidebarComponent>
+            </Sidebar>
+            <JumboTron />
+            <Sidebar className="sidebar">
+              <Social />
+            </Sidebar>
             <Link
               smooth to="#about"
               className="nav-arrow"
@@ -60,16 +70,16 @@ const App = () => {
               <FaArrowDown />
             </Link>
             <Block className="block">
-              <AboutComponent className="block-child" />
+              <About className="block-child" />
             </Block>
             <Block className="block">
-              <ProjectsComponent className="block-child" />
+              <Projects className="block-child" />
             </Block>
             <Block className="block">
-              <ContactComponent className="block-child" />
+              <Contact className="block-child" />
             </Block>
             <Block className="block footer">
-              <FooterComponent className="block-child" />
+              <Footer className="block-child" />
             </Block>
           </section>
         </div>
