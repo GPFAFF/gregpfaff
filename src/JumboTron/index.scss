@@ -12,6 +12,41 @@
     background-color: tomato;
     display: grid;
 
+    > .heading-desktop {
+      display: none;
+
+      @media screen and (min-width: 767px) {
+        display: block;
+      }
+    }
+
+    > .heading-mobile {
+      display: block;
+      justify-self: center;
+      margin-top: 80px;
+
+
+      span:nth-of-type(5) {
+        display: grid;
+        grid-template-columns: 1fr 10px;
+        align-items: end;
+        > .period {
+          background-color: tomato;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          border-radius: 50%;
+          position: relative;
+          left: 10px;
+          top: -5px;
+        }
+      }
+
+      @media screen and (min-width: 767px) {
+        display: none;
+      }
+    }
+
     > h2 {
       align-self: center;
       justify-self: end;
@@ -24,6 +59,12 @@
       font-family: 'Titillium Web', sans-serif;
       font-weight: 900;
       letter-spacing: 2.5px;
+
+      @media screen and (max-width: 767px) {
+        left: 0;
+        align-self: unset;
+        justify-self: unset;
+      }
 
       > .title {
         display: grid;
