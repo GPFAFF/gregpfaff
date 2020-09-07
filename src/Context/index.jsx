@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer } from 'react';
 import { toggleReducer } from '../reducers/toggle';
 
 const initialState = {
@@ -7,12 +7,12 @@ const initialState = {
 
 const AppContext = React.createContext(initialState);
 
-function AppProvider(props) {
+function AppProvider({ children }) {
   const [state, dispatch] = useReducer(toggleReducer, initialState);
 
- return (
+  return (
     <AppContext.Provider value={{ state, dispatch }}>
-      {props.children}
+      {children}
     </AppContext.Provider>
   );
 }

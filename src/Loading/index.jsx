@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 import './index.scss';
 
-const Loading = () => {
-  return (
-    <div aria-label="Loading" className="loading">
-      <div aria-hidden="true"></div>
-      <div aria-hidden="true"></div>
-      <div aria-hidden="true"></div>
-      <div aria-hidden="true"></div>
-    </div>
-  )
-}
+const Loading = () => (
+  <div aria-label="Loading" className="loading">
+    <div aria-hidden="true" />
+    <div aria-hidden="true" />
+    <div aria-hidden="true" />
+    <div aria-hidden="true" />
+  </div>
+);
 
 export default Loading;

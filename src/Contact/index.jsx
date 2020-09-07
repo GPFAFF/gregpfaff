@@ -1,6 +1,6 @@
-import React, { useState, Fragment } from 'react'
-import { encode } from '../helpers';
-import { ContactForm } from './presenter';
+import React, { useState } from 'react';
+import encode from '../helpers';
+import ContactForm from './presenter';
 
 import './index.scss';
 
@@ -9,36 +9,38 @@ const Contact = ({ className, ref }) => {
     formName: 'contact',
     name: '',
     email: '',
-    message: ''
+    message: '',
   };
 
   const [formData, setFormData] = useState(initialFormState);
-  const [status, setStatus] = useState(null)
-  const { formName, name, email, message } = initialFormState;
+  const [status, setStatus] = useState(null);
+  const {
+    formName, name, email, message,
+  } = initialFormState;
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({...formData, [name]: value});
+    setFormData({ ...formData, [name]: value });
   };
 
   const isFormValid = () => (
     Object.values(formData).every(Boolean)
   );
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     if (isFormValid()) {
-      fetch("/", {
-        method: "POST",
+      fetch('/', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: encode({
-          "form-name": initialFormState.formName,
+          'form-name': initialFormState.formName,
           ...formData,
-        })
+        }),
       })
-        .then(() => setStatus("Form Submission Successful!"))
-        .catch(error => setStatus("Form Submission Failed!"));
+        .then(() => setStatus('Form Submission Successful!'))
+        .catch((error) => setStatus('Form Submission Failed!', error));
     }
 
     event.preventDefault();
@@ -53,9 +55,7 @@ const Contact = ({ className, ref }) => {
       className={className}
       formData={formData}
     />
-  )
+  );
 };
 
 export default Contact;
-
-

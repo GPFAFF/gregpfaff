@@ -1,9 +1,8 @@
-import React from 'react'
-import { RiHome3Line } from 'react-icons/ri';
-import { InputGroup } from './input';
-import { TextAreaGroup } from './textarea';
+import React from 'react';
+import InputGroup from './input';
+import TextAreaGroup from './textarea';
 
-export const ContactForm = ({
+const ContactForm = ({
   className,
   handleChange,
   formData,
@@ -11,7 +10,12 @@ export const ContactForm = ({
   status,
   id,
 }) => {
-  const { formName, name, email, message } = formData;
+  const {
+    formName,
+    name,
+    email,
+    message,
+  } = formData;
 
   return (
     <section id={id} className={className}>
@@ -20,8 +24,8 @@ export const ContactForm = ({
         <p>I would love to learn about your company or opportunity.</p>
       </div>
       <div className="primary-color">
-      {status ? (
-        <h2>{status}</h2>
+        {status ? (
+          <h2>{status}</h2>
         ) : (
           <form
             name={formName}
@@ -67,5 +71,7 @@ export const ContactForm = ({
         )}
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default ContactForm;

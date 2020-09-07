@@ -1,7 +1,6 @@
 [role="main"], section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  // height: 100vh;
 
   @media screen and (max-width: 767px) {
     grid-template-rows: repeat(2, 400px);
@@ -23,8 +22,7 @@
     > .heading-mobile {
       display: block;
       justify-self: center;
-      margin-top: 80px;
-
+      margin-top: 40px;
 
       span:nth-of-type(5) {
         display: grid;
@@ -89,4 +87,8 @@
   .alternate-color {
     background-color: #f0f0f0;
   }
+}
+
+[role="main"] {
+  height: 100vh;
 }

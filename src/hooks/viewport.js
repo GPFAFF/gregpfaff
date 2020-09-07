@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useViewport = () => {
   const [isDesktop, setIsDesktop] = useState(null);
@@ -15,20 +15,19 @@ const useViewport = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    window.addEventListener("load", updateMedia);
+    window.addEventListener('resize', updateMedia);
+    window.addEventListener('load', updateMedia);
 
     return () => {
-      window.removeEventListener("resize", updateMedia);
-      window.addEventListener("load", updateMedia);
-    }
-
-  }, [isDesktop, isMobile]);
+      window.removeEventListener('resize', updateMedia);
+      window.addEventListener('load', updateMedia);
+    };
+  }, []);
 
   return {
     isDesktop,
-    isMobile
-  }
-}
+    isMobile,
+  };
+};
 
 export default useViewport;

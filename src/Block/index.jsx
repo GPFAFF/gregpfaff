@@ -1,13 +1,15 @@
 import React, {
-  Fragment,
   useRef,
   useState,
-} from 'react'
+} from 'react';
 import { useIntersectionObserver } from '../hooks/intersection';
 
-export const Block = ({ children, className, height, width }) => {
-  if (!children) return;
-
+const Block = ({
+  children,
+  className,
+  height,
+  width,
+}) => {
   const ref = useRef();
 
   const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +23,7 @@ export const Block = ({ children, className, height, width }) => {
         }
         observerElement.unobserve(ref.current);
       }
-    }
+    },
   });
 
   return (
@@ -33,11 +35,14 @@ export const Block = ({ children, className, height, width }) => {
         }
       ref={ref}
     >
-      {isVisible &&
+      {isVisible
+        && (
         <div className={className}>
           {children}
         </div>
-      }
+        )}
     </div>
-  )
-}
+  );
+};
+
+export default Block;
