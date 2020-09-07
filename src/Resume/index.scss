@@ -6,4 +6,16 @@ h3 {
   padding-top: 20px;
   display: grid;
   justify-content: center;
+
+  &.button {
+    appearance: none;
+    width: 250px;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: #34495e;
+    color: white;
+    font-size: 20px;
+    border: 2px solid black;
+  }
 }
