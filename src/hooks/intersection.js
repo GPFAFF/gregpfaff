@@ -18,7 +18,7 @@ export const useIntersectionObserver = ({
     }
 
     return () => observer.unobserve(current);
-  }, [onIntersect]);
+  }, [onIntersect, rootMargin, target, threshold]);
 };
 
 export default useIntersectionObserver;
