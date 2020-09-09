@@ -4,8 +4,8 @@ import React, {
 } from 'react';
 import {
   BrowserRouter as Router,
+  Link,
 } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link';
 
 import { FaArrowDown } from 'react-icons/fa';
 import Block from './Block';
@@ -47,27 +47,20 @@ const App = () => {
             <Sidebar className="sidebar">
               <Social />
             </Sidebar>
-            <Link
-              smooth
-              to="#about"
-              className="nav-arrow"
-              tabIndex="0"
-              aria-label="Navigate to about section"
-            >
-              <FaArrowDown />
-            </Link>
-            <Block className="block">
-              <About className="block-child" />
-            </Block>
-            <Block className="block">
-              <Projects className="block-child" />
-            </Block>
-            <Block className="block">
-              <Contact className="block-child" />
-            </Block>
-            <Block className="block footer">
-              <Footer className="block-child" />
-            </Block>
+            <div className="nested-container">
+              <Block className="block">
+                <About className="block-child" />
+              </Block>
+              <Block className="block">
+                <Projects className="block-child" />
+              </Block>
+              <Block className="block">
+                <Contact className="block-child" />
+              </Block>
+              <Block className="block footer">
+                <Footer className="block-child" />
+              </Block>
+            </div>
           </section>
         </div>
       </Suspense>

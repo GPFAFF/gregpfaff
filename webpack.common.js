@@ -5,14 +5,14 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/index.tsx',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -36,7 +36,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
     modules: [
       path.resolve(__dirname, './src'),
       path.resolve(__dirname, './node_modules'),

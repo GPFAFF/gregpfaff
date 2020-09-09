@@ -1,4 +1,8 @@
 #contactForm {
+  @media (max-width: 767px) {
+    grid-template-rows: 400px 1fr;
+  }
+
   .alternate-color {
     display: grid;
     grid-template-rows: repeat(2, 120px);
@@ -7,6 +11,7 @@
 
     > h2, p {
       padding: 0;
+      text-align: center;
     }
 
     p {

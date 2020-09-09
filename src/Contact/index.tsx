@@ -4,7 +4,13 @@ import ContactForm from './presenter';
 
 import './index.scss';
 
-const Contact = ({ className, ref }) => {
+interface Props {
+  className: string;
+}
+
+const Contact = (props: Props) => {
+  const { className } = props;
+
   const initialFormState = {
     formName: 'contact',
     name: '',
@@ -14,9 +20,6 @@ const Contact = ({ className, ref }) => {
 
   const [formData, setFormData] = useState(initialFormState);
   const [status, setStatus] = useState(null);
-  const {
-    formName, name, email, message,
-  } = initialFormState;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -40,7 +43,7 @@ const Contact = ({ className, ref }) => {
         }),
       })
         .then(() => setStatus('Form Submission Successful!'))
-        .catch((error) => setStatus('Form Submission Failed!', error));
+        .catch((error) => setStatus(`Form Submission Failed! ${error}`));
     }
 
     event.preventDefault();

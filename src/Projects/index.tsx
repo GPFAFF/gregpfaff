@@ -1,15 +1,16 @@
 import React from 'react';
+import Resume from '../Resume';
+import './index.scss';
 
-const About = ({ className, ref }) => (
+const Projects = ({ className }) => (
   <section
-    id="about"
+    id="projects"
     className={className}
-    ref={ref}
   >
-    <div className="alternate-color">
-      <h2>About Me</h2>
-    </div>
     <div className="primary-color">
+      <Resume />
+    </div>
+    <div className="alternate-color">
       <p>
         Lorem Ipsum Lorem Ipsum
         Lorem Ipsum Lorem Ipsum
@@ -21,4 +22,4 @@ const About = ({ className, ref }) => (
   </section>
 );
 
-export default About;
+export default Projects;

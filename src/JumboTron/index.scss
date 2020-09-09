@@ -5,6 +5,7 @@
   @media screen and (max-width: 767px) {
     grid-template-rows: repeat(2, 400px);
     grid-template-columns: unset;
+    grid-auto-flow: dense;
   }
 
   .primary-color {
@@ -89,6 +90,6 @@
   }
 }
 
-[role="main"] {
-  height: 100vh;
-}
+// [role="main"] {
+//   height: 100vh;
+// }

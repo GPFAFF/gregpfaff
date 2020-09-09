@@ -1,21 +1,35 @@
-h3 {
-  text-align: center;
-}
-
-.primary-color .download-resume {
-  padding-top: 20px;
-  display: grid;
-  justify-content: center;
-
-  &.button {
-    appearance: none;
-    width: 250px;
+.primary-color {
+  h3 {
+    text-align: center;
     padding: 20px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    background: #34495e;
-    color: white;
-    font-size: 20px;
-    border: 2px solid black;
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+
+  .download-resume {
+    padding-top: 20px;
+    display: grid;
+    justify-content: center;
+
+    &.button {
+      appearance: none;
+      width: 200px;
+      padding: 20px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      background: #34495e;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      border: 2px solid black;
+      align-self: center;
+      justify-self: center;
+
+      @media (min-width: 767px) {
+        width: 250px;
+        padding: 20px;
+      }
+    }
   }
 }

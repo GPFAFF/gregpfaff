@@ -1,16 +1,18 @@
 import React, {
+  ReactNode,
   useRef,
   useState,
 } from 'react';
 import { useIntersectionObserver } from '../hooks/intersection';
 
-const Block = ({
-  children,
-  className,
-  height,
-  width,
-}) => {
+interface Props {
+  children: ReactNode;
+  className: string;
+}
+
+const Block = (props: Props) => {
   const ref = useRef();
+  const { children, className } = props;
 
   const [isVisible, setIsVisible] = useState(false);
 

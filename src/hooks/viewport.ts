@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 
+export interface ViewPort {
+  isDesktop: boolean;
+  isMobile: boolean;
+}
+
 const useViewport = () => {
-  const [isDesktop, setIsDesktop] = useState(null);
-  const [isMobile, setIsMobile] = useState(null);
+  const [isDesktop, setIsDesktop] = useState<ViewPort>(null);
+  const [isMobile, setIsMobile] = useState<ViewPort>(null);
 
   const updateMedia = () => {
     if (window.innerWidth <= 767) {
