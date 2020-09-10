@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent } from 'react';
 
-const TextAreaGroup = ({
-  id,
-  type,
-  label,
-  name,
-  value,
-  required,
-  handleChange,
-}) => (
-  <p>
-    <label htmlFor={id}>
-      {label}
-    </label>
-    <textarea
-      id={id}
-      type={type}
-      name={name}
-      value={value}
-      required
-      onChange={handleChange}
-    />
-  </p>
-);
+interface Props {
+  id: string;
+  label: string;
+  name: string;
+  value: string;
+  required: boolean;
+  handleChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+}
+
+const TextAreaGroup = (props: Props) => {
+  const {
+    id,
+    label,
+    name,
+    value,
+    required,
+    handleChange,
+  } = props;
+
+  return (
+    <p>
+      <label htmlFor={id}>
+        {label}
+      </label>
+      <textarea
+        id={id}
+        name={name}
+        value={value}
+        required={required}
+        onChange={handleChange}
+      />
+    </p>
+  )
+};
 
 export default TextAreaGroup;

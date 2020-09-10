@@ -1,10 +1,17 @@
 import React from 'react';
 import './index.scss';
 
-const Header = ({ title }) => (
-  <h1 id="home">
-    {title}
-  </h1>
-);
+interface Props {
+  title: string;
+}
+
+const Header = (props: Props) => {
+  const { title } = props;
+  return (
+    <h1 id="home">
+      {title}
+    </h1>
+  )
+};
 
 export default Header;

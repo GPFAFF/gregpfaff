@@ -2,24 +2,22 @@ import React from 'react';
 import Resume from '../Resume';
 import './index.scss';
 
-const Projects = ({ className }) => (
-  <section
-    id="projects"
-    className={className}
-  >
-    <div className="primary-color">
-      <Resume />
-    </div>
-    <div className="alternate-color">
-      <p>
-        Lorem Ipsum Lorem Ipsum
-        Lorem Ipsum Lorem Ipsum
-        Lorem Ipsum Lorem Ipsum
-        Lorem Ipsum Lorem Ipsum
-        Lorem Ipsum Lorem Ipsum
-      </p>
-    </div>
-  </section>
-);
+interface Props {
+  className: string;
+}
+
+const Projects = (props: Props) => {
+  const { className } = props;
+  return (
+    <section
+      id="projects"
+      className={className}
+    >
+      <div className="primary-color">
+        <Resume />
+      </div>
+    </section>
+  );
+};
 
 export default Projects;

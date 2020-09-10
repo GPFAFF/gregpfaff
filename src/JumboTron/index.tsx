@@ -11,7 +11,6 @@ const JumboTron = () => {
       <div className="primary-color">
         {isDesktop
           ? <DesktopHeader isDesktop={isDesktop} />
-          : <MobileHeader isMobile={isMobile} />}
       </div>
       <div className="alternate-color" />
     </section>

@@ -14,7 +14,7 @@ const Block = (props: Props) => {
   const ref = useRef();
   const { children, className } = props;
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useIntersectionObserver({
     target: ref,

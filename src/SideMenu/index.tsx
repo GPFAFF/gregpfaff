@@ -1,7 +1,7 @@
 import React, {
   useContext,
 } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { AiOutlineClose } from 'react-icons/ai';
 import { navLinks } from '../constants';
 import { AppContext } from '../Context';
@@ -23,7 +23,7 @@ const SideMenu = () => {
       />
       {navLinks.map(({ url, name }) => (
         <li key={name}>
-          <Link to={url}>{name}</Link>
+          <Link smooth to={url}>{name}</Link>
         </li>
       ))}
     </ul>

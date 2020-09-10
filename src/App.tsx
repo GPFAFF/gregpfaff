@@ -4,10 +4,8 @@ import React, {
 } from 'react';
 import {
   BrowserRouter as Router,
-  Link,
 } from 'react-router-dom';
 
-import { FaArrowDown } from 'react-icons/fa';
 import Block from './Block';
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -18,6 +16,7 @@ import SideMenu from './SideMenu';
 import JumboTron from './JumboTron';
 import About from './About';
 import Projects from './Projects';
+import Tech from './Tech';
 import Contact from './Contact';
 
 import Loading from './Loading';
@@ -53,6 +52,9 @@ const App = () => {
               </Block>
               <Block className="block">
                 <Projects className="block-child" />
+              </Block>
+              <Block className="block">
+                <Tech className="block-child" />
               </Block>
               <Block className="block">
                 <Contact className="block-child" />

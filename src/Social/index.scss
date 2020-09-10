@@ -2,12 +2,17 @@
   position: fixed;
   right: 12px;
   grid-template-rows: repeat(3, 20px);
+  top: 420px;
+
+  @media (min-width: 767px) {
+    top: 280px;
+  }
 
   a {
     color: black;
   }
 
   > div {
-    row-gap: 10px;
+    gap: 10px 0;
   }
 }
