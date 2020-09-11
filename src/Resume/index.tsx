@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Document, Page } from 'react-pdf/dist/entry.webpack';
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import resumePDF from '../../greg.pdf';
 import useViewport from '../hooks/viewport';
 import './index.scss';
