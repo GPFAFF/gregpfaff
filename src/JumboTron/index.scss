@@ -7,7 +7,7 @@
     grid-template-columns: unset;
   }
 
-  .primary-color {
+  .primary-color.jumbotron {
     background-color: tomato;
     display: grid;
 
@@ -62,7 +62,7 @@
       @media screen and (max-width: 767px) {
         left: 0;
         align-self: unset;
-        justify-self: unset;
+        justify-self: center;
       }
 
       > .title {
