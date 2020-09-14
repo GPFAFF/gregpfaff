@@ -5,13 +5,18 @@ import useViewport from '../hooks/viewport';
 import './index.scss';
 
 const JumboTron = () => {
-  const { isMobile, isDesktop } = useViewport();
+  const { width } = useViewport();
+  const isDesktop = width >= 767;
+
+  console.log(width);
+
   return (
     <section role="main">
       <div className="primary-color">
         {isDesktop
           ? <DesktopHeader isDesktop={isDesktop} />
-          : <MobileHeader isMobile={isMobile} />}
+          : <MobileHeader isDesktop={isDesktop} />
+        }
       </div>
       <div className="alternate-color" />
     </section>

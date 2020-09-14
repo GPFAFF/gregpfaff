@@ -23,11 +23,6 @@ body {
 
 .nested-container {
   grid-column: 2;
-  // grid-template-rows: repeat(4, minmax(150px, auto));
-
-  @media (min-width: 767px) {
-    // grid-template-rows: unset;
-  }
 
   .block {
     justify-content: center;

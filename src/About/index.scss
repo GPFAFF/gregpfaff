@@ -5,5 +5,14 @@
 
   .primary-color > p {
     padding: 10px 30px;
+    margin: 0;
+
+    &:first-of-type {
+      margin-top: 1em;
+    }
+
+    &:last-of-type {
+      margin-bottom: 1em;
+    }
   }
 }

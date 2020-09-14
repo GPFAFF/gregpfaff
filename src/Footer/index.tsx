@@ -6,12 +6,17 @@ interface Props {
 }
 
 const Footer = (props: Props) => {
+
+  const displayCC = () => {
+    return `1982 - ${new Date().getFullYear()}`
+  }
+
   const { className } = props;
   return (
     <footer
       className={className}
     >
-      Here is the footer
+      GP - {displayCC()}
     </footer>
   );
 };

@@ -14,7 +14,7 @@
 
     &.button {
       appearance: none;
-      width: 200px;
+      width: auto;
       padding: 20px;
       text-transform: uppercase;
       border-radius: 4px;
@@ -25,6 +25,7 @@
       border: 2px solid black;
       align-self: center;
       justify-self: center;
+      margin: 30px;
 
       @media (min-width: 767px) {
         width: 250px;

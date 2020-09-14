@@ -18,7 +18,7 @@ const Block = (props: Props) => {
 
   useIntersectionObserver({
     target: ref,
-    onIntersect: ([{ isIntersecting }], observerElement) => {
+    onIntersect: ([{ isIntersecting }]: any, observerElement : any) => {
       if (isIntersecting) {
         if (!isVisible) {
           setIsVisible(true);
@@ -26,6 +26,8 @@ const Block = (props: Props) => {
         observerElement.unobserve(ref.current);
       }
     },
+    rootMargin: '0px',
+    threshold: 0.3,
   });
 
   return (

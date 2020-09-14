@@ -1,14 +1,13 @@
 import React from 'react';
-
 interface Props {
-  isMobile: boolean;
+  isDesktop: boolean;
 }
 
 const MobileHeader = (props: Props) => {
-  const { isMobile } = props;
+  const { isDesktop } = props;
 
   return (
-    <h2 className="heading-mobile" aria-hidden={isMobile}>
+    <h2 className="heading-mobile" aria-hidden={isDesktop}>
       <div className="title" aria-label="Hello!">
         <span>H</span>
         <span>e</span>

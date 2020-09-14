@@ -1,37 +1,24 @@
 import { useEffect, useState } from 'react';
 
-interface ViewPort {
-  isDesktop: boolean;
-  isMobile: boolean;
-}
-
 const useViewport = () => {
-  const [isDesktop, setIsDesktop] = useState<ViewPort>({ isDesktop: false, isMobile: false });
-  const [isMobile, setIsMobile] = useState<ViewPort>({isDesktop: false, isMobile: false });
+  const [width, setWidth] = useState(1000);
 
-  const updateMedia = () => {
-    if (window.innerWidth <= 767) {
-      setIsMobile({ isDesktop: false, isMobile: true});
-      setIsDesktop({ isDesktop: true, isMobile: false});
-    } else {
-      setIsDesktop({ isDesktop: true, isMobile: false});
-      setIsMobile({ isDesktop: false, isMobile: true});
-    }
+  const resizeMedia = () => {
+    setWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener('resize', updateMedia);
-    window.addEventListener('load', updateMedia);
+    window.addEventListener('load', resizeMedia);
+    window.addEventListener('resize', resizeMedia);
 
     return () => {
-      window.removeEventListener('resize', updateMedia);
-      window.addEventListener('load', updateMedia);
+      window.removeEventListener('load', resizeMedia);
+      window.removeEventListener('resize', resizeMedia);
     };
-  }, []);
+  }, [width]);
 
   return {
-    isDesktop,
-    isMobile,
+    width,
   };
 };
 
