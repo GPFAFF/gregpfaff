@@ -1,4 +1,6 @@
 #projects {
   font-family: 'Titillium Web', sans-serif;
-  height: 120vh;
+  grid-template-columns: 1fr;
+  min-height: 100%;
+  grid-template-rows: 1fr;
 }

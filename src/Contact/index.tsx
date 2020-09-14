@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import encode from '../helpers';
 import ContactForm from './presenter';
+import { FormData } from './types';
 
 import './index.scss';
 
-const Contact = ({ className, ref }) => {
+interface Props {
+  className: string;
+}
+
+const Contact = (props: Props) => {
+  const { className } = props;
+
   const initialFormState = {
     formName: 'contact',
     name: '',
@@ -12,13 +19,10 @@ const Contact = ({ className, ref }) => {
     message: '',
   };
 
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData] = useState<FormData>(initialFormState);
   const [status, setStatus] = useState(null);
-  const {
-    formName, name, email, message,
-  } = initialFormState;
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -27,7 +31,7 @@ const Contact = ({ className, ref }) => {
     Object.values(formData).every(Boolean)
   );
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     if (isFormValid()) {
       fetch('/', {
         method: 'POST',
@@ -40,7 +44,7 @@ const Contact = ({ className, ref }) => {
         }),
       })
         .then(() => setStatus('Form Submission Successful!'))
-        .catch((error) => setStatus('Form Submission Failed!', error));
+        .catch((error) => setStatus(`Form Submission Failed! ${error}`));
     }
 
     event.preventDefault();

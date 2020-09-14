@@ -1,4 +1,4 @@
-export function toggleReducer(state, action) {
+export function toggleReducer(state: any, action: { type: any }) {
   switch (action.type) {
     case 'ACTIVE': {
       return {

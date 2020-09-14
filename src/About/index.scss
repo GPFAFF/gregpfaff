@@ -1,7 +1,15 @@
 #about {
-  font-family: 'Titillium Web', sans-serif;
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  justify-items: center;
-  align-items: center;
+  @media (max-width: 767px) {
+    grid-template-rows: 400px 1fr;
+  }
+
+  .primary-color > p {
+    &:first-of-type {
+      margin-top: 1em;
+    }
+
+    &:last-of-type {
+      margin-bottom: 1em;
+    }
+  }
 }

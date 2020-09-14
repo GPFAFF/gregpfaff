@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent } from 'react';
 import InputGroup from './input';
 import TextAreaGroup from './textarea';
+import { FormData } from './types';
 
-const ContactForm = ({
-  className,
-  handleChange,
-  formData,
-  handleSubmit,
-  status,
-  id,
-}) => {
+interface Props {
+  className: string;
+  formData: FormData;
+  handleChange: (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
+  handleSubmit: (event: FormEvent) => void;
+  status: string;
+  id: string;
+}
+
+const ContactForm = (props: Props) => {
+  const {
+    className,
+    handleChange,
+    formData,
+    handleSubmit,
+    status,
+    id,
+  } = props;
+
   const {
     formName,
     name,
@@ -57,7 +69,6 @@ const ContactForm = ({
             />
             <TextAreaGroup
               id="message"
-              type="text"
               name="message"
               label="Your Message:"
               value={message}

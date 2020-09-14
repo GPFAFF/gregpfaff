@@ -1,4 +1,4 @@
-[role="main"], section {
+.container, section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -45,7 +45,8 @@
       }
     }
 
-    > h2 {
+    > .heading-desktop,
+    > .heading-mobile {
       align-self: center;
       justify-self: end;
       text-transform: uppercase;
@@ -89,6 +90,17 @@
   }
 }
 
-[role="main"] {
-  height: 100vh;
+.container {
+  height: auto;
+  min-height: 100%;
+
+  @media screen and (min-width: 767px) {
+    height: 100vh;
+  }
+}
+
+section {
+  @media screen and (max-width: 400px) {
+    grid-column: 2;
+  }
 }

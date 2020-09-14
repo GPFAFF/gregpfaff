@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/entry.webpack';
 import resumePDF from '../../greg.pdf';
 import useViewport from '../hooks/viewport';
@@ -6,17 +6,18 @@ import './index.scss';
 
 const Resume = () => {
   const [resume, setResume] = useState(null);
-  const { isDesktop, isMobile } = useViewport();
+  const { width } = useViewport();
+  const isDesktop = width >= 767;
 
   useEffect(() => {
     setResume(resumePDF);
   }, [resume]);
 
   return (
-    <>
-      <h3>Click my resume to download</h3>
-      {isMobile || !isDesktop
-        ? (
+    <Fragment>
+      <h2>Click my resume to download</h2>
+      {!isDesktop ?
+        (
           <a
             className="download-resume button"
             target="_blank"
@@ -38,8 +39,9 @@ const Resume = () => {
               <Page pageNumber={1} />
             </Document>
           </a>
-        )}
-    </>
+        )
+      }
+    </Fragment>
   );
 };
 

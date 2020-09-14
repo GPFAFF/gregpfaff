@@ -1,4 +1,15 @@
 footer {
-  padding-left: 40px;
+  padding-left: 0;
   margin-top: 20px;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+
+  > p {
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  @media (min-width: 767px) {
+    padding-left: 40px;
+  }
 }

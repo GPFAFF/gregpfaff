@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/gregpfaff/.nvm/versions/node/v10.15.3/bin/node /usr/local/Cellar/yarn/1.22.0/libexec/bin/yarn.js add eslint-config-config-airbnb
+  /Users/gregpfaff/.nvm/versions/node/v10.15.3/bin/node /usr/local/Cellar/yarn/1.22.0/libexec/bin/yarn.js add eslint-config-airbnb-typescrip
 
 PATH: 
   /Users/gregpfaff/usr/local/opt/mongodb-community@4.0/bin:/Users/gregpfaff/.rbenv/bin:/Users/gregpfaff/.rbenv/shims:/Users/gregpfaff/.nvm/versions/node/v10.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/gregpfaff/usr/local/opt/mongodb-community@4.0/bin:/Users/gregpfaff/.rbenv/bin:/Users/gregpfaff/.rbenv/shims:/Users/gregpfaff/.nvm/versions/node/v10.15.3/bin:/Users/gregpfaff/Library/Python/2.7/bin:/Users/gregpfaff/Library/Python/2.7/bin:/Users/gregpfaff/go
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/eslint-config-config-airbnb: Not found
+  Error: https://registry.yarnpkg.com/eslint-config-airbnb-typescrip: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:66975:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:140727:22)
       at Request.emit (events.js:189:13)
@@ -58,6 +58,9 @@ npm manifest:
       "@babel/core": "^7.11.1",
       "@babel/preset-env": "^7.11.0",
       "@babel/preset-react": "^7.10.4",
+      "@types/node": "^14.6.4",
+      "@types/react": "^16.9.49",
+      "@types/react-dom": "^16.9.8",
       "axios": "^0.19.2",
       "babel-eslint": "10.1.0",
       "babel-loader": "8.1.0",
@@ -68,6 +71,7 @@ npm manifest:
       "clean-webpack-plugin": "^3.0.0",
       "css-loader": "3.4.2",
       "eslint": "^6.6.0",
+      "eslint-config-airbnb": "^18.2.0",
       "eslint-config-react-app": "^5.2.1",
       "eslint-loader": "3.0.3",
       "eslint-plugin-import": "2.20.1",
@@ -79,6 +83,7 @@ npm manifest:
       "mini-css-extract-plugin": "0.9.0",
       "node-sass": "^4.14.1",
       "optimize-css-assets-webpack-plugin": "5.0.3",
+      "peerdeps": "^1.0.0",
       "postcss-flexbugs-fixes": "4.1.0",
       "postcss-loader": "3.0.0",
       "postcss-normalize": "8.0.1",
@@ -99,6 +104,7 @@ npm manifest:
       "semver": "6.3.0",
       "style-loader": "0.23.1",
       "swr": "^0.3.0",
+      "typescript": "^4.0.2",
       "url-loader": "2.3.0",
       "webpack": "4.42.0",
       "webpack-cli": "^3.3.12",
@@ -1321,15 +1327,40 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.27.tgz#a151873af5a5e851b51b3b065c9e63390a9e0eb1"
     integrity sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
   
+  "@types/node@^14.6.4":
+    version "14.6.4"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
+    integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
+  
   "@types/parse-json@^4.0.0":
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
     integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
   
+  "@types/prop-types@*":
+    version "15.7.3"
+    resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
+    integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  
   "@types/q@^1.5.1":
     version "1.5.4"
     resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
     integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
+  
+  "@types/react-dom@^16.9.8":
+    version "16.9.8"
+    resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.8.tgz#fe4c1e11dfc67155733dfa6aa65108b4971cb423"
+    integrity sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
+    dependencies:
+      "@types/react" "*"
+  
+  "@types/react@*", "@types/react@^16.9.49":
+    version "16.9.49"
+    resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.49.tgz#09db021cf8089aba0cdb12a49f8021a69cce4872"
+    integrity sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
+    dependencies:
+      "@types/prop-types" "*"
+      csstype "^3.0.2"
   
   "@types/source-list-map@*":
     version "0.1.2"
@@ -3082,6 +3113,11 @@ Lockfile:
     dependencies:
       css-tree "1.0.0-alpha.39"
   
+  csstype@^3.0.2:
+    version "3.0.3"
+    resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.3.tgz#2b410bbeba38ba9633353aff34b05d9755d065f8"
+    integrity sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
+  
   currently-unhandled@^0.4.1:
     version "0.4.1"
     resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
@@ -3397,25 +3433,6 @@ Lockfile:
     dependencies:
       is-obj "^2.0.0"
   
-  dotenv-defaults@^2.0.0:
-    version "2.0.0"
-    resolved "https://registry.yarnpkg.com/dotenv-defaults/-/dotenv-defaults-2.0.0.tgz#f48577d885c7755d2a4ce1f7f3706552c0cb367e"
-    integrity sha512-8X8gQoM+BH0L/v+GwgpeNwrthbG2uTDVr3vkbedQPLrIalZE0vxB9LbuD+7echbiP7fAY3tE+pZI11R1DtlUNg==
-    dependencies:
-      dotenv "^8.2.0"
-  
-  dotenv-webpack@^2.0.0:
-    version "2.0.0"
-    resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-2.0.0.tgz#064ae42dbb214778d8aff0c76dc97253594f9ec3"
-    integrity sha512-Omo5IpVl7XRgWXeZjxdfqOBEApJPxGLMOIx3F/w/W7ppUKgYMOXrk4eczlQrErPD4X0YRESlyGJek3O4uobRnw==
-    dependencies:
-      dotenv-defaults "^2.0.0"
-  
-  dotenv@^8.2.0:
-    version "8.2.0"
-    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
-    integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
-  
   duplexer@^0.1.1:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -3603,6 +3620,24 @@ Lockfile:
     version "1.0.5"
     resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
     integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+  
+  eslint-config-airbnb-base@^14.2.0:
+    version "14.2.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.2.0.tgz#fe89c24b3f9dc8008c9c0d0d88c28f95ed65e9c4"
+    integrity sha512-Snswd5oC6nJaevs3nZoLSTvGJBvzTfnBqOIArkf3cbyTyq9UD79wOk8s+RiL6bhca0p/eRO6veczhf6A/7Jy8Q==
+    dependencies:
+      confusing-browser-globals "^1.0.9"
+      object.assign "^4.1.0"
+      object.entries "^1.1.2"
+  
+  eslint-config-airbnb@^18.2.0:
+    version "18.2.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-18.2.0.tgz#8a82168713effce8fc08e10896a63f1235499dcd"
+    integrity sha512-Fz4JIUKkrhO0du2cg5opdyPKQXOI2MvF8KUvN2710nJMT6jaRUpRE2swrJftAjVGL7T1otLM5ieo5RqS1v9Udg==
+    dependencies:
+      eslint-config-airbnb-base "^14.2.0"
+      object.assign "^4.1.0"
+      object.entries "^1.1.2"
   
   eslint-config-react-app@^5.2.1:
     version "5.2.1"
@@ -6259,7 +6294,7 @@ Lockfile:
       has-symbols "^1.0.0"
       object-keys "^1.0.11"
   
-  object.entries@^1.1.1:
+  object.entries@^1.1.1, object.entries@^1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/object.entries/-/object.entries-1.1.2.tgz#bc73f00acb6b6bb16c203434b10f9a7e797d3add"
     integrity sha512-BQdB9qKmb/HyNdMNWVr7O3+z5MUIx3aiegEIJqjMBbBf0YT9RRxTJSim4mzFqtyr7PDAHigq0N9dO0m0tRakQA==
@@ -6684,6 +6719,11 @@ Lockfile:
     dependencies:
       node-ensure "^0.0.0"
       worker-loader "^2.0.0"
+  
+  peerdeps@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/peerdeps/-/peerdeps-1.0.0.tgz#cfce3bf7f0d812f8ec8a154423bdd1d2e42add81"
+    integrity sha512-+AAyEwfc4pAzbfPLd+hKHu3z+rlxkxbWd+29ilWrITWriNoTVzoEHjoJUNh/2PhYjZhbTkEkIhHdtR4nsgoWIA==
   
   performance-now@^2.1.0:
     version "2.1.0"
@@ -9144,6 +9184,11 @@ Lockfile:
     version "0.0.6"
     resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
     integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+  
+  typescript@^4.0.2:
+    version "4.0.2"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
+    integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
   
   unicode-canonical-property-names-ecmascript@^1.0.4:
     version "1.0.4"

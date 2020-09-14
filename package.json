@@ -25,11 +25,13 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "axios": "^0.19.2",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/react-pdf": "^4.0.5",
+    "@types/react-router-hash-link": "^1.2.1",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "babel-plugin-named-asset-import": "^0.3.6",
@@ -57,34 +59,35 @@
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
+    "resolve": "1.15.0",
+    "resolve-url-loader": "3.1.1",
+    "sass-loader": "8.0.2",
+    "semver": "6.3.0",
+    "style-loader": "0.23.1",
+    "url-loader": "2.3.0",
+    "webpack": "4.42.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "3.10.3",
+    "webpack-merge": "^5.1.1"
+  },
+  "dependencies": {
+    "@icons-pack/react-simple-icons": "^3.10.0",
+    "axios": "^0.19.2",
     "react": "^16.13.1",
-    "react-app-polyfill": "^1.0.6",
-    "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
     "react-icons": "^3.10.0",
     "react-pdf": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.0.0",
-    "resolve": "1.15.0",
-    "resolve-url-loader": "3.1.1",
-    "sass-loader": "8.0.2",
-    "semver": "6.3.0",
-    "style-loader": "0.23.1",
-    "swr": "^0.3.0",
-    "url-loader": "2.3.0",
-    "webpack": "4.42.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "3.10.3",
-    "webpack-merge": "^5.1.1"
+    "swr": "^0.3.0"
   },
   "babel": {
     "presets": [
       "@babel/preset-env",
-      "@babel/preset-react"
+      "@babel/preset-react",
+      "@babel/preset-typescript"
     ]
-  },
-  "devDependencies": {
-    "webpack-bundle-analyzer": "^3.8.0"
   }
 }

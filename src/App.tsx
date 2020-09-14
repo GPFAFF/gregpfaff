@@ -5,9 +5,7 @@ import React, {
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link';
 
-import { FaArrowDown } from 'react-icons/fa';
 import Block from './Block';
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -18,6 +16,7 @@ import SideMenu from './SideMenu';
 import JumboTron from './JumboTron';
 import About from './About';
 import Projects from './Projects';
+import Tech from './Tech';
 import Contact from './Contact';
 
 import Loading from './Loading';
@@ -31,7 +30,7 @@ const App = () => {
   return (
     <Router>
       <Suspense fallback={<Loading />}>
-        <div>
+        <div role="main">
           <Header
             title="Greg Pfaff"
           />
@@ -47,27 +46,23 @@ const App = () => {
             <Sidebar className="sidebar">
               <Social />
             </Sidebar>
-            <Link
-              smooth
-              to="#about"
-              className="nav-arrow"
-              tabIndex="0"
-              aria-label="Navigate to about section"
-            >
-              <FaArrowDown />
-            </Link>
-            <Block className="block">
-              <About className="block-child" />
-            </Block>
-            <Block className="block">
-              <Projects className="block-child" />
-            </Block>
-            <Block className="block">
-              <Contact className="block-child" />
-            </Block>
-            <Block className="block footer">
-              <Footer className="block-child" />
-            </Block>
+            <div className="nested-container">
+              <Block className="block">
+                <About className="block-child" />
+              </Block>
+              <Block className="block">
+                <Projects className="block-child" />
+              </Block>
+              <Block className="block">
+                <Tech className="block-child" />
+              </Block>
+              <Block className="block">
+                <Contact className="block-child" />
+              </Block>
+              <Block className="block footer">
+                <Footer className="block-child" />
+              </Block>
+            </div>
           </section>
         </div>
       </Suspense>

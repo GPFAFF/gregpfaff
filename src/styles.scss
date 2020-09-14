@@ -4,23 +4,10 @@ body {
 }
 
 #app {
-  // height: 100vh;
-
   > div > section {
     display: grid;
     grid-template-columns: 40px 1fr 40px;
     grid-template-rows: auto;
-  }
-}
-
-.nav-arrow {
-  grid-column: 2;
-  justify-self: center;
-  color: black;
-  padding-top: 70px;
-
-  > svg {
-    font-size: 28px;
   }
 }
 
@@ -34,24 +21,33 @@ body {
   width: 1px;
 }
 
-.block {
+.nested-container {
   grid-column: 2;
-  justify-content: center;
-  margin: 40px 0;
-  // height: 100vh;
 
-  &.full {
-    opacity: 1;
-    transition: opacity 400ms ease 0ms;
-  }
+  .block {
+    justify-content: center;
 
-  &.blur {
-    opacity: 0;
-    transition: opacity 0ms ease 400ms;
-  }
+    @media (min-width: 767px) {
+      margin: 40px 0;
+    }
 
-  &.footer {
-    height: 140px;
+    > .block {
+      margin-top: 60px;
+    }
+
+    &.full {
+      opacity: 1;
+      transition: opacity 400ms ease 0ms;
+    }
+
+    &.blur {
+      opacity: 0;
+      transition: opacity 0ms ease 400ms;
+    }
+
+    &.footer {
+      height: 140px;
+    }
   }
 }
 
@@ -62,6 +58,9 @@ body {
   > h3, p {
     align-self: center;
     justify-self: center;
+  }
+
+  > h3 {
     padding: 50px;
   }
 }
@@ -69,12 +68,6 @@ body {
 .alternate-color {
   display: grid;
   background-color: #f0f0f0;
-
-  > h2, p {
-    align-self: center;
-    justify-self: center;
-    padding: 50px;
-  }
 }
 
 h1, h2, h3 {
@@ -83,7 +76,11 @@ h1, h2, h3 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 24px;
+
+  @media (min-width: 767px) {
+    font-size: 40px;
+  }
 }
 
 h3 {
@@ -92,6 +89,17 @@ h3 {
 
 p {
   font-family: 'Titillium Web', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
+  padding: 10px 30px;
+  margin: 0;
+
+  @media screen and (min-width: 767px) {
+    font-size: 20px;
+  }
+}
+
+h2, p {
+  align-self: center;
+  justify-self: center;
 }
