@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useViewport = () => {
-  const [width, setWidth] = useState(1000);
+  const [width, setWidth] = useState(0);
 
   const resizeMedia = () => {
     setWidth(window.innerWidth);

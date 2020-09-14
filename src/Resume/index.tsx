@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/entry.webpack';
 import resumePDF from '../../greg.pdf';
 import useViewport from '../hooks/viewport';
@@ -14,7 +14,7 @@ const Resume = () => {
   }, [resume]);
 
   return (
-    <>
+    <Fragment>
       <h3>Click my resume to download</h3>
       {!isDesktop ?
         (
@@ -41,7 +41,7 @@ const Resume = () => {
           </a>
         )
       }
-    </>
+    </Fragment>
   );
 };
 

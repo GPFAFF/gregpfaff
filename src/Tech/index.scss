@@ -1,19 +1,18 @@
 #tech {
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  @media (max-width: 767px) {
+    grid-template-rows: 400px 1fr;
+  }
 
-  > .alternate-color {
-    >  p {
-      padding: 10px 30px;
-      margin: 0;
-      justify-self: unset;
+  .primary-color > p {
+    padding: 10px 30px;
+    margin: 0;
+
+    &:first-of-type {
+      margin-top: 1em;
     }
 
-    .technologies {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      justify-items: center;
+    &:last-of-type {
+      margin-bottom: 1em;
     }
   }
 }
