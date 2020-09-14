@@ -16,7 +16,7 @@ const Footer = (props: Props) => {
     <footer
       className={className}
     >
-      GP - {displayCC()}
+      <p>G P&#8482; - {displayCC()}</p>
     </footer>
   );
 };

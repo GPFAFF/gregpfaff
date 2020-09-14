@@ -1,3 +1,3 @@
-export interface ToggleEvent {
+export interface ToggleState {
   active: boolean;
 }

@@ -8,7 +8,9 @@ interface Props {
 const Header = (props: Props) => {
   const { title } = props;
   return (
-    <h1 id="home">
+    <h1
+      id="home"
+    >
       {title}
     </h1>
   )

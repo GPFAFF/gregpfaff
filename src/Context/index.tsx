@@ -10,7 +10,7 @@ const initialState: ToggleEvent = {
   active: false,
 };
 
-const AppContext = React.createContext<ToggleEvent>(initialState);
+const AppContext = React.createContext(initialState);
 
 function AppProvider(props: Props) {
   const { children } = props;

@@ -8,11 +8,9 @@ const JumboTron = () => {
   const { width } = useViewport();
   const isDesktop = width >= 767;
 
-  console.log(width);
-
   return (
-    <section role="main">
-      <div className="primary-color">
+    <section className="container">
+      <div className="primary-color jumbotron">
         {isDesktop
           ? <DesktopHeader isDesktop={isDesktop} />
           : <MobileHeader isDesktop={isDesktop} />

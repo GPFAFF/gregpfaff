@@ -11,15 +11,14 @@ interface Props {
 const Nav = (props: Props) => {
   const { ariaLabel, onClick } = props;
   return (
-    <div
-      role="menu"
+    <nav
       className="menu-nav"
       aria-label={ariaLabel}
       onClick={onClick}
       tabIndex={0}
     >
       <RiMenu3Line />
-    </div>
+    </nav>
   )
 };
 

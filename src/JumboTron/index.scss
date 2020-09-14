@@ -1,4 +1,4 @@
-[role="main"], section {
+.container, section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -45,7 +45,8 @@
       }
     }
 
-    > h2 {
+    > .heading-desktop,
+    > .heading-mobile {
       align-self: center;
       justify-self: end;
       text-transform: uppercase;
@@ -89,7 +90,7 @@
   }
 }
 
-[role="main"] {
+.container {
   height: auto;
   min-height: 100%;
 

@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Router>
       <Suspense fallback={<Loading />}>
-        <div>
+        <div role="main">
           <Header
             title="Greg Pfaff"
           />

@@ -58,6 +58,9 @@ body {
   > h3, p {
     align-self: center;
     justify-self: center;
+  }
+
+  > h3 {
     padding: 50px;
   }
 }
@@ -65,12 +68,6 @@ body {
 .alternate-color {
   display: grid;
   background-color: #f0f0f0;
-
-  > h2, p {
-    align-self: center;
-    justify-self: center;
-    padding: 50px;
-  }
 }
 
 h1, h2, h3 {
@@ -94,8 +91,15 @@ p {
   font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
   font-weight: 300;
+  padding: 10px 30px;
+  margin: 0;
 
   @media screen and (min-width: 767px) {
     font-size: 20px;
   }
+}
+
+h2, p {
+  align-self: center;
+  justify-self: center;
 }

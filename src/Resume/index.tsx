@@ -15,7 +15,7 @@ const Resume = () => {
 
   return (
     <Fragment>
-      <h3>Click my resume to download</h3>
+      <h2>Click my resume to download</h2>
       {!isDesktop ?
         (
           <a

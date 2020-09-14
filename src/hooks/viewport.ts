@@ -8,11 +8,10 @@ const useViewport = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('load', resizeMedia);
+    setWidth(window.innerWidth);
     window.addEventListener('resize', resizeMedia);
 
     return () => {
-      window.removeEventListener('load', resizeMedia);
       window.removeEventListener('resize', resizeMedia);
     };
   }, [width]);
