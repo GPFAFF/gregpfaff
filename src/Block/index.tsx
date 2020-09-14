@@ -26,7 +26,7 @@ const Block = (props: Props) => {
         observerElement.unobserve(ref.current);
       }
     },
-    rootMargin: '100px',
+    rootMargin: '-100px',
     threshold: 0.3,
   });
 
