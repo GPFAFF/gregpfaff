@@ -16,7 +16,7 @@ const SocialComponent = lazy(() => import('./Social'));
 const SideMenuComponent = lazy(() => import('./SideMenu'));
 const JumboTronComponent = lazy(() => import('./JumboTron'));
 const AboutComponent = lazy(() => import('./About'));
-const ProjectsComponent = lazy(() => import('./Projects'));
+// const ProjectsComponent = lazy(() => import('./Projects'));
 const TechComponent = lazy(() => import('./Tech'));
 const ContactComponent = lazy(() => import('./Contact'));
 
@@ -49,9 +49,6 @@ const App = () => {
             </SidebarComponent>
             <BlockComponent className="block">
               <AboutComponent className="block-child" />
-            </BlockComponent>
-            <BlockComponent className="block">
-              <ProjectsComponent className="block-child" />
             </BlockComponent>
             <BlockComponent className="block">
               <TechComponent className="block-child" />
