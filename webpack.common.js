@@ -30,9 +30,6 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {
-              name: '[name].[ext]'
-            }
           },
         ],
       },
@@ -54,16 +51,15 @@ module.exports = {
     }),
   ],
   optimization: {
+    namedModules: true,
     splitChunks: {
       chunks: 'async',
       minSize: 20000,
-      minRemainingSize: 0,
       maxSize: 0,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
       automaticNameDelimiter: '~',
-      enforceSizeThreshold: 50000,
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
@@ -75,7 +71,7 @@ module.exports = {
           reuseExistingChunk: true
         }
       }
-    }
+    },
   },
   output: {
     filename: 'bundle.js',
