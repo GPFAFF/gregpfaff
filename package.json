@@ -8,8 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer bundle/output/path/stats.json"
+    "build": "webpack --config webpack.prod.js"
   },
   "eslintConfig": {
     "extends": "react-app"
