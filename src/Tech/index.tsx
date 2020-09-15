@@ -19,7 +19,6 @@ const Tech = (props: Props) => {
         <div className="technologies">
           {logos.map((logo: any, i: number) => {
             const { icon, name } = logo;
-            console.log(icon);
             return (
               <div key={i}>
                 <span className="visuallyhidden">{name}</span>

@@ -54,21 +54,20 @@ module.exports = {
     namedModules: true,
     splitChunks: {
       chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+        styles: {
+          test: /\.css$/,
+          name: 'styles',
+          chunks: 'all',
+          enforce: true,
+        },
+      },
     },
-      // cacheGroups: {
-      //   vendors: {
-      //     test: /[\\/]node_modules[\\/]/,
-      //     name: 'vendors',
-      //     chunks: 'all',
-      //   },
-      //   styles: {
-      //     test: /\.css$/,
-      //     name: 'styles',
-      //     chunks: 'all',
-      //     enforce: true,
-      //   },
-      // },
-    // },
   },
   output: {
     filename: 'bundle.js',
