@@ -73,13 +73,7 @@ module.exports = {
           minChunks: 2,
           priority: -20,
           reuseExistingChunk: true
-        },
-        styles: {
-          test: /\.css$/,
-          name: 'styles',
-          chunks: 'all',
-          enforce: true,
-        },
+        }
       }
     }
   },
