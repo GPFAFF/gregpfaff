@@ -1,6 +1,7 @@
 const path = require('path');
 const{ CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -52,6 +53,8 @@ module.exports = {
   ],
   optimization: {
     namedModules: true,
+    minimize: true,
+    minimizer: [new TerserPlugin()],
     splitChunks: {
       chunks: 'async',
       minSize: 20000,
