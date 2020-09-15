@@ -21,33 +21,30 @@ body {
   width: 1px;
 }
 
-.nested-container {
+.block {
   grid-column: 2;
+  justify-content: center;
 
-  .block {
-    justify-content: center;
+  @media (min-width: 767px) {
+    margin: 40px 0;
+  }
 
-    @media (min-width: 767px) {
-      margin: 40px 0;
-    }
+  > .block {
+    margin-top: 60px;
+  }
 
-    > .block {
-      margin-top: 60px;
-    }
+  &.full {
+    opacity: 1;
+    transition: opacity 400ms ease 0ms;
+  }
 
-    &.full {
-      opacity: 1;
-      transition: opacity 400ms ease 0ms;
-    }
+  &.blur {
+    opacity: 0;
+    transition: opacity 0ms ease 400ms;
+  }
 
-    &.blur {
-      opacity: 0;
-      transition: opacity 0ms ease 400ms;
-    }
-
-    &.footer {
-      height: 140px;
-    }
+  &.footer {
+    height: 140px;
   }
 }
 

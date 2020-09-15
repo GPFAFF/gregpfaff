@@ -1,6 +1,7 @@
 const path = require('path');
 const{ CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require('webpack');
 
 module.exports = {
@@ -49,24 +50,27 @@ module.exports = {
       inject: true,
       chunks: ['app', 'vendors'],
     }),
+    new BundleAnalyzerPlugin(),
   ],
   optimization: {
     namedModules: true,
     splitChunks: {
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-        styles: {
-          test: /\.css$/,
-          name: 'styles',
-          chunks: 'all',
-          enforce: true,
-        },
-      },
+      chunks: 'all',
     },
+      // cacheGroups: {
+      //   vendors: {
+      //     test: /[\\/]node_modules[\\/]/,
+      //     name: 'vendors',
+      //     chunks: 'all',
+      //   },
+      //   styles: {
+      //     test: /\.css$/,
+      //     name: 'styles',
+      //     chunks: 'all',
+      //     enforce: true,
+      //   },
+      // },
+    // },
   },
   output: {
     filename: 'bundle.js',

@@ -1,23 +1,24 @@
 import React, {
   useContext,
   Suspense,
+  lazy,
 } from 'react';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
 
-import Block from './Block';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-import Nav from './Nav';
-import Social from './Social';
-import SideMenu from './SideMenu';
-import JumboTron from './JumboTron';
-import About from './About';
-import Projects from './Projects';
-import Tech from './Tech';
-import Contact from './Contact';
+const BlockComponent = lazy(() => import('./Block'));
+const HeaderComponent = lazy(() => import('./Header'));
+const SidebarComponent = lazy(() => import('./Sidebar'));
+const FooterComponent = lazy(() => import('./Footer'));
+const NavComponent = lazy(() => import('./Nav'));
+const SocialComponent = lazy(() => import('./Social'));
+const SideMenuComponent = lazy(() => import('./SideMenu'));
+const JumboTronComponent = lazy(() => import('./JumboTron'));
+const AboutComponent = lazy(() => import('./About'));
+const ProjectsComponent = lazy(() => import('./Projects'));
+const TechComponent = lazy(() => import('./Tech'));
+const ContactComponent = lazy(() => import('./Contact'));
 
 import Loading from './Loading';
 import { AppContext } from './Context';
@@ -31,38 +32,36 @@ const App = () => {
     <Router>
       <Suspense fallback={<Loading />}>
         <div role="main">
-          <Header
+          <HeaderComponent
             title="Greg Pfaff"
           />
-          <SideMenu />
+          <SideMenuComponent />
           <section>
-            <Sidebar className="sidebar">
-              <Nav
+            <SidebarComponent className="sidebar">
+              <NavComponent
                 ariaLabel="Open side menu"
                 onClick={() => dispatch({ type: 'ACTIVE' })}
               />
-            </Sidebar>
-            <JumboTron />
-            <Sidebar className="sidebar">
-              <Social />
-            </Sidebar>
-            <div className="nested-container">
-              <Block className="block">
-                <About className="block-child" />
-              </Block>
-              <Block className="block">
-                <Projects className="block-child" />
-              </Block>
-              <Block className="block">
-                <Tech className="block-child" />
-              </Block>
-              <Block className="block">
-                <Contact className="block-child" />
-              </Block>
-              <Block className="block footer">
-                <Footer className="block-child" />
-              </Block>
-            </div>
+            </SidebarComponent>
+            <JumboTronComponent />
+            <SidebarComponent className="sidebar">
+              <SocialComponent />
+            </SidebarComponent>
+            <BlockComponent className="block">
+              <AboutComponent className="block-child" />
+            </BlockComponent>
+            <BlockComponent className="block">
+              <ProjectsComponent className="block-child" />
+            </BlockComponent>
+            <BlockComponent className="block">
+              <TechComponent className="block-child" />
+            </BlockComponent>
+            <BlockComponent className="block">
+              <ContactComponent className="block-child" />
+            </BlockComponent>
+            <BlockComponent className="block footer">
+              <FooterComponent className="block-child" />
+            </BlockComponent>
           </section>
         </div>
       </Suspense>

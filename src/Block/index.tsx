@@ -13,8 +13,7 @@ interface Props {
 const Block = (props: Props) => {
   const ref = useRef();
   const { children, className } = props;
-
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
 
   useIntersectionObserver({
     target: ref,
@@ -26,8 +25,8 @@ const Block = (props: Props) => {
         observerElement.unobserve(ref.current);
       }
     },
-    rootMargin: '0px',
-    threshold: 0.3,
+    rootMargin: '-100px',
+    threshold: 0.4,
   });
 
   return (
@@ -39,12 +38,11 @@ const Block = (props: Props) => {
         }
       ref={ref}
     >
-      {isVisible
-        && (
+      {isVisible && (
         <div className={className}>
           {children}
         </div>
-        )}
+      )}
     </div>
   );
 };
