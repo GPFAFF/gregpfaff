@@ -19,6 +19,7 @@ const SideMenu = () => {
     <ul className={`menu ${isActive}`}>
       <AiOutlineClose
         className="menu-close-icon"
+        onKeyPress={handleToggle}
         onClick={handleToggle}
       />
       {navLinks.map(({ url, name }) => (
