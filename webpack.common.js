@@ -1,17 +1,16 @@
 const path = require('path');
-const{ CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/index.tsx',
+    app: './src/index.jsx',
   },
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(js)x?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -34,10 +33,10 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
     modules: [
       path.resolve(__dirname, './src'),
       path.resolve(__dirname, './node_modules'),
@@ -66,14 +65,14 @@ module.exports = {
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          priority: -10,
         },
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
-        }
-      }
+          reuseExistingChunk: true,
+        },
+      },
     },
   },
   output: {

@@ -1,20 +1,8 @@
-import { useEffect, MutableRefObject } from 'react';
+import { useEffect } from 'react';
 
-interface Props {
-  target: MutableRefObject<HTMLElement>;
-  onIntersect: any;
-  rootMargin: string;
-  threshold: number;
-}
-
-export const useIntersectionObserver = (props: Props) => {
-  const {
-    target,
-    onIntersect,
-    rootMargin,
-    threshold,
-  } = props;
-
+export const useIntersectionObserver = ({
+  target, onIntersect, rootMargin, threshold,
+}) => {
   useEffect(() => {
     const observer = new IntersectionObserver(onIntersect, {
       rootMargin,

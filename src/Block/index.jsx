@@ -1,23 +1,16 @@
 import React, {
-  ReactNode,
   useRef,
   useState,
 } from 'react';
 import { useIntersectionObserver } from '../hooks/intersection';
 
-interface Props {
-  children: ReactNode;
-  className: string;
-}
-
-const Block = (props: Props) => {
+const Block = ({ children, className }) => {
   const ref = useRef();
-  const { children, className } = props;
-  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useIntersectionObserver({
     target: ref,
-    onIntersect: ([{ isIntersecting }]: any, observerElement : any) => {
+    onIntersect: ([{ isIntersecting }], observerElement) => {
       if (isIntersecting) {
         if (!isVisible) {
           setIsVisible(true);

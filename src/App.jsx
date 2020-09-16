@@ -7,6 +7,11 @@ import {
   BrowserRouter as Router,
 } from 'react-router-dom';
 
+import Loading from './Loading';
+import { AppContext } from './Context';
+
+import './styles.scss';
+
 const BlockComponent = lazy(() => import('./Block'));
 const HeaderComponent = lazy(() => import('./Header'));
 const SidebarComponent = lazy(() => import('./Sidebar'));
@@ -19,11 +24,6 @@ const AboutComponent = lazy(() => import('./About'));
 const ProjectsComponent = lazy(() => import('./Projects'));
 const TechComponent = lazy(() => import('./Tech'));
 const ContactComponent = lazy(() => import('./Contact'));
-
-import Loading from './Loading';
-import { AppContext } from './Context';
-
-import './styles.scss';
 
 const App = () => {
   const { dispatch } = useContext(AppContext);

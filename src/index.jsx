@@ -7,7 +7,7 @@ ReactDOM.render(
   <AppProvider>
     <App />
   </AppProvider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
 
 if (module.hot) {

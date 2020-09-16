@@ -1,17 +1,10 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState } from 'react';
 import encode from '../helpers';
 import ContactForm from './presenter';
-import { FormData } from './types';
 
 import './index.scss';
 
-interface Props {
-  className: string;
-}
-
-const Contact = (props: Props) => {
-  const { className } = props;
-
+const Contact = ({ className }) => {
   const initialFormState = {
     formName: 'contact',
     name: '',
@@ -19,10 +12,10 @@ const Contact = (props: Props) => {
     message: '',
   };
 
-  const [formData, setFormData] = useState<FormData>(initialFormState);
+  const [formData, setFormData] = useState(initialFormState);
   const [status, setStatus] = useState(null);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -31,7 +24,7 @@ const Contact = (props: Props) => {
     Object.values(formData).every(Boolean)
   );
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event) => {
     if (isFormValid()) {
       fetch('/', {
         method: 'POST',

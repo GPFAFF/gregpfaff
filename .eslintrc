@@ -1,6 +1,37 @@
 {
-  "extends": ["airbnb-typescript", "airbnb/hooks"],
+  "extends": [
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "react",
+    "import",
+    "jsx-a11y",
+    "react-hooks"
+  ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/prop-types": 0,
+    "no-console": 1,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

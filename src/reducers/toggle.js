@@ -1,18 +1,20 @@
-export function toggleReducer(state: any, action: { type: any }) {
+function toggleReducer(state, action) {
   switch (action.type) {
     case 'ACTIVE': {
       return {
         ...state,
-        active: true
-      }
+        active: true,
+      };
     }
     case 'HIDE': {
       return {
         ...state,
-        active: false
-      }
+        active: false,
+      };
     }
     default:
-      return state
+      return state;
   }
 }
+
+export default toggleReducer;

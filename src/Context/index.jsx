@@ -1,19 +1,13 @@
 import React, { useReducer } from 'react';
-import { toggleReducer } from '../reducers/toggle';
-import { ToggleEvent } from '../reducers/types';
+import toggleReducer from '../reducers/toggle';
 
-interface Props {
-  children: React.ReactElement
-}
-
-const initialState: ToggleEvent = {
+const initialState = {
   active: false,
 };
 
 const AppContext = React.createContext(initialState);
 
-function AppProvider(props: Props) {
-  const { children } = props;
+function AppProvider({ children }) {
   const [state, dispatch] = useReducer(toggleReducer, initialState);
 
   return (

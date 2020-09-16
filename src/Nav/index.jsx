@@ -3,23 +3,18 @@ import { RiMenu3Line } from 'react-icons/ri';
 
 import './index.scss';
 
-interface Props {
-  ariaLabel: string;
-  onClick: () => void;
-}
-
-const Nav = (props: Props) => {
-  const { ariaLabel, onClick } = props;
-  return (
+const Nav = ({ ariaLabel, onClick }) => (
+  <div>
     <nav
       className="menu-nav"
       aria-label={ariaLabel}
+      onKeyPress={onClick}
       onClick={onClick}
       tabIndex={0}
     >
       <RiMenu3Line />
     </nav>
-  )
-};
+  </div>
+);
 
 export default Nav;

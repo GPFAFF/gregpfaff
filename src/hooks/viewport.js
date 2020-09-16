@@ -14,7 +14,7 @@ const useViewport = () => {
     return () => {
       window.removeEventListener('resize', resizeMedia);
     };
-  }, [width]);
+  }, []);
 
   return {
     width,
