@@ -18,8 +18,8 @@ const Block = ({ children, className }) => {
         observerElement.unobserve(ref.current);
       }
     },
-    rootMargin: '-120px',
-    threshold: 0.4,
+    rootMargin: '0px',
+    threshold: 0.3,
   });
 
   return (

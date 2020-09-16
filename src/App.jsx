@@ -15,7 +15,6 @@ import './styles.scss';
 import Block from './Block';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
 import Nav from './Nav';
 import Social from './Social';
 import SideMenu from './SideMenu';
@@ -58,9 +57,6 @@ const App = () => {
             </Block>
             <Block className="block">
               <Contact className="block-child" />
-            </Block>
-            <Block className="block footer">
-              <Footer className="block-child" />
             </Block>
           </section>
         </div>

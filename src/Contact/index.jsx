@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import encode from '../helpers';
 import ContactForm from './presenter';
+import Footer from '../Footer';
 
 import './index.scss';
 
@@ -44,14 +45,17 @@ const Contact = ({ className }) => {
   };
 
   return (
-    <ContactForm
-      id="contactForm"
-      status={status}
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      className={className}
-      formData={formData}
-    />
+    <>
+      <ContactForm
+        id="contactForm"
+        status={status}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        className={className}
+        formData={formData}
+      />
+      <Footer className="block-child" />
+    </>
   );
 };
 
