@@ -12,7 +12,7 @@ const useViewport = () => {
     window.addEventListener('resize', resizeMedia);
 
     return () => {
-      window.removeEventListener('resize', resizeMedia)
+      window.removeEventListener('resize', resizeMedia);
     };
   }, []);
 
