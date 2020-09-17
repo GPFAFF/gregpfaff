@@ -2,11 +2,15 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import useViewport from '../hooks/viewport';
 import { useIntersectionObserver } from '../hooks/intersection';
 
 const Block = ({ children, className }) => {
   const ref = useRef();
   const [isVisible, setIsVisible] = useState(false);
+  const { width } = useViewport();
+
+  console.log(width);
 
   useIntersectionObserver({
     target: ref,

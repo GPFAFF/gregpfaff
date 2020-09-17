@@ -2,6 +2,9 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const cssnano = require('cssnano');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -15,13 +18,12 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(sc|c)ss$/,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
+          process.env.NODE_ENV === 'development'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
           'css-loader',
-          // Compiles Sass to CSS
           'sass-loader',
         ],
       },
@@ -44,6 +46,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: process.env.NODE_ENV === 'development' ? '[name].css' : 'css/[name].[chunkhash:8].css',
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: true,
@@ -51,29 +56,42 @@ module.exports = {
     }),
   ],
   optimization: {
-    namedModules: true,
-    minimize: true,
-    minimizer: [new TerserPlugin()],
     splitChunks: {
-      chunks: 'async',
-      minSize: 20000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 30,
-      maxInitialRequests: 30,
-      automaticNameDelimiter: '~',
+      chunks: 'all',
       cacheGroups: {
-        defaultVendors: {
+        commons: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
+          name: 'vendors',
+          chunks: 'all',
         },
       },
     },
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        terserOptions: {
+          compress: {
+            dead_code: true,
+            conditionals: true,
+            booleans: true,
+          },
+          module: false,
+          output: {
+            comments: false,
+            beautify: false,
+          },
+        },
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.css$/g,
+        cssProcessor: cssnano,
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+        canPrint: true,
+      }),
+    ],
   },
   output: {
     filename: 'bundle.js',
