@@ -54,7 +54,7 @@ const Contact = ({ className }) => {
         className={className}
         formData={formData}
       />
-      <Footer className="block-child" />
+      <Footer />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, {
   useContext,
   Suspense,
-  // lazy,
 } from 'react';
 import {
   BrowserRouter as Router,
