@@ -11,9 +11,6 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quite",
     "build": "webpack --config webpack.prod.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -31,8 +28,10 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@tsconfig/recommended": "^1.0.1",
     "@types/react-pdf": "^4.0.5",
     "@types/react-router-hash-link": "^1.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "babel-plugin-named-asset-import": "^0.3.6",
@@ -42,12 +41,13 @@
     "css-loader": "3.4.2",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "3.0.3",
-    "eslint-plugin-import": "2.20.1",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.19.0",
-    "eslint-plugin-react-hooks": "^1.6.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "file-loader": "4.3.0",
     "install-peerdeps": "^2.0.3",
     "node-sass": "^4.14.1",
