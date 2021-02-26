@@ -2,7 +2,6 @@ import React from 'react';
 import { FiMail } from 'react-icons/fi';
 import {
   Typescript,
-  Ruby,
   Javascript,
   Amazonaws,
   Redux,
