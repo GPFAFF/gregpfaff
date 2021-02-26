@@ -56,10 +56,14 @@ module.exports = {
     }),
   ],
   optimization: {
-    namedModules: true,
-    minimize: true,
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
     },
     minimizer: [
       new TerserPlugin({
