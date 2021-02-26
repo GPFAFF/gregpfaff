@@ -10,8 +10,6 @@ const Block = ({ children, className }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { width } = useViewport();
 
-  console.log(width);
-
   useIntersectionObserver({
     target: ref,
     onIntersect: ([{ isIntersecting }], observerElement) => {
@@ -32,7 +30,7 @@ const Block = ({ children, className }) => {
         isVisible
           ? `${className} full`
           : `${className} blur`
-        }
+      }
       ref={ref}
     >
       {isVisible && (
